@@ -47,7 +47,7 @@
         <ul style="list-style-type: none;">
           <li style="display: inline; margin: 10px"><a href="About.aspx">AAbout Us</a></li>
           <li style="display: inline; margin: 10px"><a href="Contact.aspx">Contact Information</a></li>
-          <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press/a></li>
+          <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press</a></li>
           <li style="display: inline; margin: 10px"><a href="#">Privacy</a></li>
         </ul>
       </div>
