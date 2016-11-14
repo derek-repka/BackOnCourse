@@ -30,6 +30,7 @@
             <strong>Our story</strong></p>
           <p>
               We have been providing occupational health and safety training and consulting services for various industries at affordable prices since 1980. Our customers tell us that we have consistently exceeded their expectations in the development of their workplace health &amp; safety training programs as well as onsite and offsite health &amp; safety training.</p>
+
           <p>
               <strong>Our Value</strong></p>
           <p>
@@ -67,9 +68,9 @@
     <footer class="footer">
       <div class="container">
         <ul style="list-style-type: none;">
-          <li style="display: inline; margin: 10px"><a href="#">About Us</a></li>
+          <li style="display: inline; margin: 10px"><a href="About.aspx">About Us</a></li>
           <li style="display: inline; margin: 10px"><a href="#">Contact Information</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Press</a></li>
+          <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press</a></li>
           <li style="display: inline; margin: 10px"><a href="#">Privacy</a></li>
         </ul>
       </div>
