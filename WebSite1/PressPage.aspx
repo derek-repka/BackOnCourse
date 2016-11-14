@@ -28,8 +28,7 @@
         <h2>Press Centre</h2>
     <hr>
         <p>
-         This is content.
-        </p>
+            <a href="Join_Now_Page.aspx">Join Us Now!</a></p>
           <p>
               &nbsp;</p>
           <p>
