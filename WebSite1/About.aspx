@@ -30,6 +30,7 @@
             <strong>Our story</strong></p>
           <p>
               We have been providing occupational health and safety training and consulting services for various industries at affordable prices since 1980. Our customers tell us that we have consistently exceeded their expectations in the development of their workplace health &amp; safety training programs as well as onsite and offsite health &amp; safety training.</p>
+
           <p>
               <strong>Our Value</strong></p>
           <p>
@@ -64,20 +65,6 @@
       
       <div class="col-md-1"><!--margin to the right--></div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <ul style="list-style-type: none;">
-          <li style="display: inline; margin: 10px"><a href="#">About Us</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Contact Information</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Press</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Privacy</a></li>
-        </ul>
-      </div>
-    </footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
 
