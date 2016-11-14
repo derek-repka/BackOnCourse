@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Join_Now_Page.aspx.vb" Inherits="About" %>
+﻿<%@ Page Title="About" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="JoinNewPage.aspx.vb" Inherits="About" %>
 
   <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="MainContent">
     <h2 style="color: #000000">
