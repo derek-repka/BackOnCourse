@@ -65,20 +65,6 @@
       
       <div class="col-md-1"><!--margin to the right--></div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <ul style="list-style-type: none;">
-          <li style="display: inline; margin: 10px"><a href="About.aspx">About Us</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Contact Information</a></li>
-          <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Privacy</a></li>
-        </ul>
-      </div>
-    </footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
 
