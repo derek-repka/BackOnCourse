@@ -27,11 +27,14 @@
       <div class="col-md-6">
         <h2>Press Centre</h2>
     <hr>
-        <p>
-         This is content.
-        </p>
+        <p style="font-weight: bold; font-size: large">
+            Press Release</p>
+          <p>
+              <a href="Join_Now_Page.aspx">Join Us Now!</a></p>
           <p>
               &nbsp;</p>
+          <p style="font-weight: bold; font-size: large">
+              In the News</p>
           <p>
               &nbsp;</p>
     <hr>
