@@ -30,7 +30,7 @@
         <p style="font-weight: bold; font-size: large">
             Press Release</p>
           <p>
-              <a href="Join_Now_Page.aspx">Join Us Now!</a></p>
+              <a href="JoinNewPage.aspx">Join Us Now!</a></p>
           <p>
               &nbsp;</p>
           <p style="font-weight: bold; font-size: large">
