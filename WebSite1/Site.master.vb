@@ -5,6 +5,8 @@ Imports System.Web
 Imports System.Web.Security
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
+Imports System.Data.SqlClient
+Imports System.Data
 
 Public Partial Class SiteMaster
     Inherits MasterPage
@@ -57,5 +59,23 @@ Public Partial Class SiteMaster
 
     Protected Sub Unnamed_LoggingOut(sender As Object, e As LoginCancelEventArgs)
         Context.GetOwinContext().Authentication.SignOut()
+    End Sub
+
+    Protected Sub Validate_User(sender As Object, e As EventArgs)
+        Dim email As String = txtEmail.Value
+        Dim password As String = txtPassword.Value
+        If Not email.Equals("") And Not password.Equals("") Then
+            loginDataSource.SelectParameters("email").DefaultValue = email
+            loginDataSource.SelectParameters("password").DefaultValue = password
+
+            Dim dv As DataView = CType(loginDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+            If dv.Count.Equals(1) Then
+                Session("id") = email
+            End If
+        End If
+    End Sub
+    Protected Sub Logout(sender As Object, e As EventArgs)
+        Session.Abandon()
+        Response.Redirect("Default.aspx")
     End Sub
 End Class
