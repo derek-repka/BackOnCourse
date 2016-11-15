@@ -69,11 +69,16 @@ Public Partial Class SiteMaster
             loginDataSource.SelectParameters("password").DefaultValue = password
 
             Dim dv As DataView = CType(loginDataSource.Select(DataSourceSelectArguments.Empty), DataView)
-            If dv.Count.Equals(1) Then
-                Session("id") = email
+            If dv.Count > 0 Then
+                Session("id") = dv(0)(0)
+                Session("firstName") = dv(0)(4)
+                Session("lastName") = dv(0)(5)
+                Session("email") = dv(0)(3)
+                Session("type") = dv(0)(6)
             End If
         End If
     End Sub
+
     Protected Sub Logout(sender As Object, e As EventArgs)
         Session.Abandon()
         Response.Redirect("Default.aspx")
