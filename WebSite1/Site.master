@@ -52,27 +52,29 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Courses</a></li>
                     </ul>
-                    <div class="navbar-form navbar-right">
-                        <% If Session("id") Is Nothing Then%>
+                    <% If Session("id") Is Nothing Then%>
+                    <div class="navbar-form navbar-right"> 
                         <div class="form-group">
-                          <input id="txtEmail" runat="server" type="text" placeholder="Email" class="form-control">
+                            <input id="txtEmail" runat="server" type="text" placeholder="Email" class="form-control">
                         </div>
                         <div class="form-group">
-                          <input id="txtPassword" runat="server" type="password" placeholder="Password" class="form-control">
+                            <input id="txtPassword" runat="server" type="password" placeholder="Password" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-success" runat="server" onserverclick="Validate_User">Sign in</button>
-                        <% Else %>
-                        <div><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></div>
-                        <div class="dropdown">
+                    </div>
+                    <% Else %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=Session("id") %><span class="caret"></span></a>
                             <ul class="dropdown-menu">
                             <li><a href="#">Settings</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="Default.aspx" runat="server" onserverclick="Logout">Log out</a></li>
                             </ul>
-                        </div>
-                        <% End If%>
-                     </div>
+                        </li>
+                    </ul>
+                    <% End If%> 
                 </div>
             </div>
         </div>
