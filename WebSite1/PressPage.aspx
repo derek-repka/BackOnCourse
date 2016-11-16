@@ -37,6 +37,10 @@
               In the News</p>
           <p>
              <a href="http://www.cbc.ca/news/canada/windsor/unifor-moreau-safety-workplace-1.3839537">Call to Strengthen Workplace Safety Legislation</a></p>
+          <p>
+             <a href="http://www.cbc.ca/news/canada/edmonton/more-needs-to-be-done-on-workplace-safety-alberta-auditor-general-says-1.3665342"> Alberta Auditor General Urges More Needs to be Done on Workplace Safety</a></p>
+          <p>
+             <a href="http://globalnews.ca/news/3040125/ohs-investigating-after-worker-dies-at-south-edmonton-work-site/"> Ocupation Health and Safety Investigates City Worker Death at Workplace Accident</a></p>
     <hr>
       </div>
       
