@@ -25,15 +25,17 @@
     <div class="container">
       <div class="col-md-1"><!--margin to the left--></div>
       <div class="col-md-6">
-        <h2>Press Centre</h2>
+        <h2 style="font-size: xx-large">Press Centre</h2>
     <hr>
-        <p style="font-weight: bold; font-size: large">
+        <p style="font-weight: bold; font-size: x-large">
             Press Release</p>
           <p>
               <a href="JoinNewPage.aspx">Join Us Now!</a></p>
           <p>
+              <a href="ClientPromotionPage.aspx"> Our Client, EllisDon, Recognized for Promoting Health and Safety</a></p>
+          <p>
               &nbsp;</p>
-          <p style="font-weight: bold; font-size: large">
+          <p style="font-weight: bold; font-size: x-large">
               In the News</p>
           <p>
              <a href="http://www.cbc.ca/news/canada/windsor/unifor-moreau-safety-workplace-1.3839537">Call to Strengthen Workplace Safety Legislation</a></p>
