@@ -36,7 +36,7 @@
           <p style="font-weight: bold; font-size: large">
               In the News</p>
           <p>
-              &nbsp;</p>
+             <a href="http://www.cbc.ca/news/canada/windsor/unifor-moreau-safety-workplace-1.3839537">Call to Strengthen Workplace Safety Legislation</a></p>
     <hr>
       </div>
       
