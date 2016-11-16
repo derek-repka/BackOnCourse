@@ -47,7 +47,7 @@
               <asp:Image ID="Client1" runat="server" EnableTheming="True" GenerateEmptyAlternateText="True" Height="100px" ImageUrl="~/images/AboutUs/AboutUs_Client1.jpg" Width="175px" />
 &nbsp;&nbsp;&nbsp;
               <asp:Image ID="Client2" runat="server" Height="100px" ImageUrl="~/images/AboutUs/AboutUs_Client2.png" Width="175px" />
-        </p>
+              <img alt="" src="images/AboutUs/AboutUs_Client3.JPG" style="width: 232px; height: 59px" /></p>
           <p>
               <strong>Our People</strong></p>
           <p>

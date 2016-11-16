@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="JoinNewPage.aspx.vb" Inherits="About" %>
 
   <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="MainContent">
-    <h2 style="color: #000000">
+      <h2 style="color: #000000">
        
         Now Accepting New Companies</h2>
     <p style="color: #808080">
@@ -36,6 +36,8 @@
           </tr>
        <tr><td></td></tr></table>
    <p style="color: #0000FF; font-weight: bold">
+        &nbsp;</p>
+      <p style="color: #0000FF; font-weight: bold; font-size: large;">
         Discover how we offer businesses a simple, effective way to join the online 
         marketplace <a href="Default.aspx">TODAY!</a></p>
 </asp:Content>
