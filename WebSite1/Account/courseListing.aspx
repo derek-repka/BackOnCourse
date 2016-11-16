@@ -8,6 +8,13 @@
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
+
+    Sub search_courses(ByVal sender As Object, ByVal e As EventArgs) Handles SearchButton.Click
+
+        Dim clickedButton As Button = sender
+        clickedButton.Enabled = True
+        Courses.Visible = True
+    End Sub
 </script>
 
 <html lang="en">
@@ -59,9 +66,20 @@
               position: relative;
               min-height: 1px;
               float: left;
-              width: 25%;
+              width: 22%;
               left: 34px;
-              top: 0px;
+              top: 2px;
+              padding-left: 15px;
+              padding-right: 15px;
+          }
+          .auto-style5 {
+              position: relative;
+              min-height: 1px;
+              float: left;
+              width: 5%;
+              left: 99px;
+              top: 8px;
+              height: 37px;
               padding-left: 15px;
               padding-right: 15px;
           }
@@ -76,6 +94,7 @@
         <div class="search-bar">
           <h4>Search for Courses</h4>
           <hr>
+
           <div class="form-group">
             <div class="auto-style3">
                 Course Topic:&nbsp;<asp:DropDownList ID="Topic" runat="server" DataSourceID="sqltopicsdb" DataTextField="Topic" DataValueField="Topic">
@@ -89,7 +108,7 @@
              </p>
             </div>
             <div class="auto-style4">
-                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="191px">
                     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                     <NextPrevStyle VerticalAlign="Bottom" />
                     <OtherMonthDayStyle ForeColor="#808080" />
@@ -100,13 +119,21 @@
                     <WeekendDayStyle BackColor="#FFFFCC" />
                 </asp:Calendar>
             </div>
+            <div class="auto-style5">
+                 <asp:Button id="SearchButton"
+                    Text="Search"
+                    OnClick="search_courses" 
+                    runat="server"/>
+            </div>
+              
           </div>
         </div>
         </div>
         </div>
          <div class="auto-style1">
-            <asp:GridView ID="Courses" runat="server" Width="920px" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowSorting="True" Height="80px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+            <asp:GridView ID="Courses" runat="server" Width="920px" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowSorting="True" Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False">
                 <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                     <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
                     <asp:BoundField DataField="Date &amp; Time" HeaderText="Date &amp; Time" SortExpression="Date &amp; Time" />
