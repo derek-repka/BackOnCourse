@@ -19,8 +19,8 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
-                <!-- button group end -->
               </div>
+             <!-- button group end -->
             </li>
             <li class="list-group-item">Dapibus ac facilisis in
               <!-- button group start -->
@@ -33,6 +33,7 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
+               </div>
                 <!-- button group end -->
             </li>
             <li class="list-group-item">Morbi leo risus
@@ -59,7 +60,8 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
-                <!-- button group end -->
+               </div>
+               <!-- button group end -->
             </li>
             <li class="list-group-item">Vestibulum at eros
               <!-- button group start -->
@@ -72,26 +74,20 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
-                <!-- button group end -->
+               </div>
+               <!-- button group end -->
             </li>
           </ul>
+           <div class="panel-footer">
+            <div class="text-right">
+              <!--<form class="form-inline">-->
+                <h4>Course Price: $CDN 1,600</h4>
+                <button type="submit" class="btn btn-primary">Checkout</button>
+              <!--</form>-->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="container" style="margin-top: 20px">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-          <!-- Default panel contents -->
-          <div class="panel-heading">Your Total</div>
-            <ul class="list-group">
-                <li class="list-group-item">Your subtotal:</li>
-                <li class="list-group-item">Your Total:</li>
-                </ul>
-          </div>
-          <div class="text-right"> 
-             <button type="submit" class="btn btn-primary">Checkout</button>
-          </div>
-       </div>
-     </div>
 </asp:Content>
 
