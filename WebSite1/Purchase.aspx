@@ -75,7 +75,8 @@
                 </li>
             </ul>
             <br/>
-            <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <a href="http://www.ualberta.ca" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+                <!-- do we actually need the the purchase page and confirmation page, because we don't have database for payment system -->
             </div>
             </div>
             </div>
