@@ -18,6 +18,7 @@
                         <li class="list-group-item">Porta ac consectetur ac</li>
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
+                    <div class="panel-footer">Order confirmed, thank you!</div>
                 </div>
             </div>
 
