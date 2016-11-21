@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.vb" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   <div class="container">
+    <div class="container">
       <div class="col-md-1"><!--margin to the left--></div>
       <div class="col-md-6">
         <h2>Welcome to Back on Course</h2>

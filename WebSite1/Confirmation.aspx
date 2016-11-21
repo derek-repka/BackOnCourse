@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
                 <!-- Default panel contents -->
-                    <div class="panel-heading">Your Shopping Cart</div>
+                    <div class="panel-heading">Please review your order</div>
                     <!-- List group -->
                     <ul class="list-group">
                         <li class="list-group-item">Cras justo odio</li>
@@ -18,6 +18,7 @@
                         <li class="list-group-item">Porta ac consectetur ac</li>
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
+                    <div class="panel-footer">Order confirmed, thank you!</div>
                 </div>
             </div>
 
