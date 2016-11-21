@@ -48,10 +48,12 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="Default.aspx">Back on Course</a>
+
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="CourseDetail.aspx">Courses</a></li>
+                        <li><a runat="server" href="Account/courseListing.aspx">Courses</a></li>
+                         <li><a runat="server" href="Products.aspx">Products</a></li>
                     </ul>
                     <% If Session("id") Is Nothing Then%>
                     <div class="navbar-form navbar-right"> 
