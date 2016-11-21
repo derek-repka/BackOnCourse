@@ -48,7 +48,7 @@
           <li style="display: inline; margin: 10px"><a href="About.aspx">About Us</a></li>
           <li style="display: inline; margin: 10px"><a href="Contact.aspx">Contact Information</a></li>
           <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Privacy</a></li>
+          <li style="display: inline; margin: 10px">This site is for academic credit only and it does not represent any real organization. No goods or services are offered or implied.</li>
         </ul>
       </div>
     </footer>
