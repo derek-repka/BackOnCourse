@@ -21,6 +21,7 @@
               <hr>
               <p>Description: <asp:Label ID="Description" runat="server" ></asp:Label></p>
             </div>
+              <!-- We did not use the category information because we combined it with the style table -->
               <asp:SqlDataSource ID="productSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformProduct.productID, platformProduct.productName, platformFirm.firmName, platformInstructor.lastName, platformInstructor.firstName, platformEcourse.ecourseSubject, platformEcourse.price, platformEcourse.expirationDate, platformTopic.topicCode, platformStyle.styleDescription, platformProduct.price AS Expr1, platformProduct.description, platformProduct.discontinued FROM platformProduct LEFT OUTER JOIN platformEcourse ON platformProduct.productID = platformEcourse.productID LEFT OUTER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID LEFT OUTER JOIN platformFirm ON platformProduct.firmID = platformFirm.firmID AND platformEcourse.firmID = platformFirm.firmID LEFT OUTER JOIN platformInstructor ON platformEcourse.instructorID = platformInstructor.instructorID WHERE (platformProduct.productID = @productID)">
                   <SelectParameters>
                       <asp:QueryStringParameter DefaultValue="1" Name="productID" QueryStringField="productID" />
@@ -30,7 +31,7 @@
            <div class="panel-footer">
             <div class="text-right">
               <form class="form-inline">
-                <h4>Course Price: $CDN 1,600</h4>
+                <h4>Course Price:<asp:Label ID="Price" runat="server" ></asp:Label></h4>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon">-</div>
