@@ -9,28 +9,26 @@
         <br />
     </p>
     <p>
-        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" DataTextField="topicID" DataValueField="topicID" AutoPostBack="True">
+        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
         </asp:DropDownList>
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
     <p>
-        <asp:TextBox ID="cityBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="cityBox" runat="server" AutoPostBack="True"></asp:TextBox>
     </p>
     <p>
         <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
     </p>
     <p>
-        <asp:Button ID="searchButton" runat="server" Text="Search" />
-    </p>
+        &nbsp;</p>
     <p>
-        <asp:GridView ID="Courses" runat="server" Width="920px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+        <asp:GridView ID="Courses" runat="server" Width="711px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Enabled="False" Visible="False">
                 <Columns>
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                     <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
                     <asp:BoundField DataField="Date &amp; Time" HeaderText="Date &amp; Time" SortExpression="Date &amp; Time" />
                     <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                    <asp:BoundField DataField="Hosting Company" HeaderText="Hosting Company" SortExpression="Hosting Company" />
                 </Columns>
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -41,7 +39,9 @@
                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                 <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
-        <asp:SqlDataSource ID="sqlCourses" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformWorkshop.city AS City, platformWorkshop.location AS Location, platformWorkshop.dateTime AS [Date &amp; Time], platformTopic.topicCode AS Topic, platformWorkshop.price AS Price, platformFirm.firmName AS [Hosting Company] FROM platformWorkshop INNER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID INNER JOIN platformFirm ON platformWorkshop.firmID = platformFirm.firmID WHERE (platformTopic.topicCode = @topic) AND (platformWorkshop.city LIKE @city) AND (platformWorkshop.dateTime &gt;= @date)">
+            </p>
+
+        <asp:SqlDataSource ID="sqlCourses" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformWorkshop.city AS City, platformWorkshop.location AS Location, platformWorkshop.dateTime AS [Date &amp; Time], platformTopic.topicCode AS Topic, platformWorkshop.price AS Price FROM platformWorkshop INNER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID WHERE (platformTopic.topicCode = @topic) AND (platformWorkshop.city LIKE @city) AND (platformWorkshop.dateTime &gt;= @date)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="topicslist" Name="topic" PropertyName="SelectedValue" />
                     <asp:ControlParameter ControlID="cityBox" Name="city" PropertyName="Text" />
@@ -49,5 +49,13 @@
                 </SelectParameters>
         </asp:SqlDataSource>
     </p>
-</asp:Content>
 
+    <p>
+        &nbsp;</p>
+   <div><div style="float:left;width:200px"><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        </div><div style="float:left;width:346px"><asp:Button ID="searchButton" runat="server" Text="Search" />
+        </div></div>
+    <p>
+        &nbsp;</p>
+    <p>
+</asp:Content>
