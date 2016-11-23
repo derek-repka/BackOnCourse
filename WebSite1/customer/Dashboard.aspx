@@ -35,6 +35,11 @@
                     </ul>
                 </div>
             </div>
+            <asp:SqlDataSource ID="ecourseDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformEcourse.ecourseSubject, platformEcourse.ecourseID FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID INNER JOIN platformEcourse ON platformProduct.productID = platformEcourse.productID WHERE (platformUser.userID = @userID)">
+                <SelectParameters>
+                    <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="ID" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
       </div>
     </div>
