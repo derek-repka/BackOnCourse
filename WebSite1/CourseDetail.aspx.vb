@@ -12,4 +12,7 @@ Partial Class CourseDetail
             TopicHolder.Text = dv(0)(1)
         End If
     End Sub
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+    End Sub
 End Class

@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
                 <!-- Default panel contents -->
-                    <div class="panel-heading">Please review your order</div>
+                    <div class="panel-heading">Here is your order</div>
                     <!-- List group -->
                     <ul class="list-group">
                         <li class="list-group-item">Cras justo odio</li>
