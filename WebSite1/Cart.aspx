@@ -24,6 +24,11 @@
             </li>
             <li class="list-group-item">Dapibus ac facilisis in
               <!-- button group start -->
+                <asp:SqlDataSource ID="cartProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformOrderLine.quantity, platformProduct.productName, platformProduct.price AS productPrice, platformStyle.styleDescription FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID WHERE (platformOrder.orderStatusID = 1) AND (platformUser.userID = @userID)">
+                    <SelectParameters>
+                        <asp:Parameter Name="userID" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
               <div class="text-right form-inline">
                 <div class="form-group">
                   <div class="input-group">
@@ -31,6 +36,11 @@
                     <input style="width: 4em" type="text" class="form-control" id="exampleInputAmount" placeholder="Qty">
                     <div class="input-group-addon">+</div>
                   </div>
+                    <asp:SqlDataSource ID="cartWorkshopDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformWorkshop.city, platformWorkshop.location, platformWorkshop.dateTime, platformWorkshop.price, platformOrderLine.quantity, platformTopic.topicCode FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformWorkshop ON platformOrderLine.workshopID = platformWorkshop.workshopID INNER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID WHERE (platformUser.userID = @userID) AND (platformOrder.orderStatusID = 1)">
+                        <SelectParameters>
+                            <asp:Parameter Name="userID" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete</button>
                </div>
