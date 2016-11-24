@@ -35,7 +35,7 @@
             <div class="text-right">
               <!--<form class="form-inline">-->
                 <h4>Course Price: $CDN 1,600</h4>
-                <button type="submit" class="btn btn-primary">Checkout</button>
+                <a href="Purchase.aspx" class="btn btn-primary">Checkout</a>
               <!--</form>-->
             </div>
           </div>
