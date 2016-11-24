@@ -24,6 +24,11 @@
             </li>
             <li class="list-group-item">Dapibus ac facilisis in
               <!-- button group start -->
+                <asp:SqlDataSource ID="cartDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformOrderLine.quantity, platformProduct.productName, platformWorkshop.city AS workshopCity, platformWorkshop.location AS worshopLocation, platformWorkshop.dateTime AS workshopDateTime, platformWorkshop.price AS workshopPrice, platformProduct.price AS productPrice, platformStyle.styleDescription, platformTopic.topicCode FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID INNER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID LEFT OUTER JOIN platformWorkshop ON platformTopic.topicID = platformWorkshop.topicID AND platformOrderLine.workshopID = platformWorkshop.workshopID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID WHERE (platformOrder.orderStatusID = 1) AND (platformUser.userID = @userID)">
+                    <SelectParameters>
+                        <asp:Parameter Name="userID" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
               <div class="text-right form-inline">
                 <div class="form-group">
                   <div class="input-group">
