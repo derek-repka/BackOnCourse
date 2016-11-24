@@ -16,11 +16,9 @@ Partial Class corseListing3
     End Sub
 
     Private Sub Courses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Courses.SelectedIndexChanged
-        Session("id") = Courses.SelectedRow
-        Response.Redirect("CourseDetail.aspx?id=" +)
+        Dim id As String = Courses.Rows(Courses.SelectedIndex).Cells(6).Text
+        Response.Redirect("CourseDetail.aspx?id=" + id)
     End Sub
-
-
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         Courses.Visible = True
