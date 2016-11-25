@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.vb" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   <div class="container">
+    <div class="container">
       <div class="col-md-1"><!--margin to the left--></div>
       <div class="col-md-6">
         <h2>Welcome to Back on Course</h2>
@@ -14,33 +14,55 @@
         <h1>Sign Up</h1>
         <div class="form-group row">
           <div class="col-xs-5">
-            <input type="text" class="form-control" id="inputKey" placeholder="First Name">
+            <input id="txtRegFirstName" runat="server" type="text" class="form-control" placeholder="First Name">
           </div>
           <div class="col-xs-5">
-            <input type="text" class="form-control" id="inputKey" placeholder="Last Name">
+            <input id="txtRegLastName"  runat="server" type="text" class="form-control" placeholder="Last Name">
           </div>
         </div>
         <div class="form-horizontal">
           <div class="col-xs-12">
             <div class="form-group"> 
-              <input type="text" class="form-control" id="inputKey" placeholder="Company">
+              <input id="txtRegCompany" runat="server" type="text" class="form-control"  placeholder="Company">
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                <input id="txtRegEmail" runat="server" type="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="New Password">
+                <input id="txtRegPassword" runat="server" type="password" class="form-control" placeholder="New Password">
             </div>
           </div>
           <h5><small>By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</small></h5>
           <div class="form-group row">
             <div class="col-xs-6">
-              <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+              <button type="submit" class="btn btn-primary btn-block" runat="server" onserverclick="Register">Sign Up</button>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-1"><!--margin to the right--></div>
+        <asp:SqlDataSource ID="registrationDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformUser] WHERE [userID] = @userID" InsertCommand="INSERT INTO [platformUser] ([companyName], [email], [password], [firstName], [lastName], [type]) VALUES (@companyName, @email, @password, @firstName, @lastName, @type)" SelectCommand="SELECT [userID], [companyName], [email], [password], [firstName], [lastName], [type] FROM [platformUser]" UpdateCommand="UPDATE [platformUser] SET [companyName] = @companyName, [email] = @email, [password] = @password, [firstName] = @firstName, [lastName] = @lastName, [type] = @type WHERE [userID] = @userID">
+            <DeleteParameters>
+                <asp:Parameter Name="userID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="companyName" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="firstName" Type="String" />
+                <asp:Parameter Name="lastName" Type="String" />
+                <asp:Parameter Name="type" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="companyName" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="firstName" Type="String" />
+                <asp:Parameter Name="lastName" Type="String" />
+                <asp:Parameter Name="type" Type="String" />
+                <asp:Parameter Name="userID" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
     </div>
     <footer class="footer">
       <div class="container">
