@@ -39,24 +39,12 @@
                     <div class="input-group-addon">+</div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                <button type="submit" class="btn btn-primary">Add to Cartww</button>
               </form>
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <!-- Default panel contents -->
-          <div class="panel-heading">Course Materials</div>
-          <div class="panel-body">
-            <p>...
-              </p>
-          </div>
-
-          <!-- List group -->
-          <ul class="list-group">
-            
-          </ul>
-        </div>
+      
       </div>
     </div>
 </asp:Content>
