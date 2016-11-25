@@ -15,9 +15,9 @@
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
               <h5>Topic: <asp:Label ID="TopicHolder" runat="server" ></asp:Label></h5>
               <h5>Instructor:<asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
-              <h5>Offered By:<asp:Label ID="Location" runat="server" ></asp:Label></h5>
+              <h5>Offered By:<asp:Label ID="Firm" runat="server" ></asp:Label></h5>
               <h5>Course Status: <asp:Label ID="Status" runat="server" ></asp:Label></h5>
-              <h5>Schedule: <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
+              <h5>Date: <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
               <hr>
               <p>Description: <asp:Label ID="Description" runat="server" ></asp:Label></p>
             </div>

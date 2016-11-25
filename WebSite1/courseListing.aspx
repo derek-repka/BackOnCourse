@@ -27,9 +27,9 @@
     <p>
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
-     <div><div style="float:left;width:411px">
+     <div><div style="float:left;width:486px">
           </div>
-          <div style="float:left;width:467px">
+          <div style="float:left;width:226px">
               <asp:Calendar ID="Calendar1" runat="server" Visible="False"></asp:Calendar>
         </div>
          <br />

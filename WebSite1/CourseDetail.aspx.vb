@@ -9,8 +9,8 @@ Partial Class CourseDetail
         productSqlDataSource.SelectParameters("productID").DefaultValue = id
         Dim dv As DataView = CType(productSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
         If dv.Count > 0 Then
-            TopicHolder.Text = dv(0)(1)
-            Location.Text = dv(0)(2)
+            TopicHolder.Text = dv(0)(8)
+            Firm.Text = dv(0)(2)
             Description.Text = dv(0)(11)
             Status.Text = dv(0)(12)
             Price.Text = dv(0)(10)
