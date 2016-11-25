@@ -14,8 +14,6 @@ Partial Class CourseDetail
             Description.Text = dv(0)(11)
             Status.Text = dv(0)(12)
             Price.Text = dv(0)(10)
-
-
         End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
