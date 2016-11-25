@@ -13,20 +13,22 @@
 
             <div class="col-xs-9">
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
-              <h5>Topic: <asp:Label ID="TopicHolder" runat="server" ></asp:Label></h5>
+              <h5>Topic: <asp:Label ID="Topic" runat="server" ></asp:Label></h5>
               <h5>Instructor:<asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
-              <h5>Offered By:<asp:Label ID="Location" runat="server" ></asp:Label></h5>
-              <h5>Course Status: <asp:Label ID="Status" runat="server" ></asp:Label></h5>
+              <h5>Location:<asp:Label ID="Location" runat="server" ></asp:Label></h5>
+              <h5>City:<asp:Label ID="City" runat="server" ></asp:Label></h5>
               <h5>Schedule: <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
               <hr>
               <p>Description: <asp:Label ID="Description" runat="server" ></asp:Label></p>
             </div>
               <!-- We did not use the category information because we combined it with the style table -->
-              <asp:SqlDataSource ID="productSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformProduct.productID, platformProduct.productName, platformFirm.firmName, platformInstructor.lastName, platformInstructor.firstName, platformEcourse.ecourseSubject, platformEcourse.price, platformEcourse.expirationDate, platformTopic.topicCode, platformStyle.styleDescription, platformProduct.price AS Expr1, platformProduct.description, platformProduct.discontinued FROM platformProduct LEFT OUTER JOIN platformEcourse ON platformProduct.productID = platformEcourse.productID LEFT OUTER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID LEFT OUTER JOIN platformFirm ON platformProduct.firmID = platformFirm.firmID AND platformEcourse.firmID = platformFirm.firmID LEFT OUTER JOIN platformInstructor ON platformEcourse.instructorID = platformInstructor.instructorID WHERE (platformProduct.productID = @productID)">
+              
+              <asp:SqlDataSource ID="workshopSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT workshopID, city, location, dateTime, topicID, firmID, instructorID FROM platformWorkshop WHERE (workshopID = @workshopID)">
                   <SelectParameters>
-                      <asp:QueryStringParameter DefaultValue="1" Name="productID" QueryStringField="productID" />
+                      <asp:QueryStringParameter DefaultValue="1" Name="workshopID" QueryStringField="workshopID" />
                   </SelectParameters>
               </asp:SqlDataSource>
+              
           </div>
            <div class="panel-footer">
             <div class="text-right">
