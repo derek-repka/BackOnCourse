@@ -6,7 +6,7 @@
       <div class="col-md-6">
         <h2>Welcome to Back on Course</h2>
         <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            We provide the services, you provide the content. Feel free to sign up for our services and discover how being a client can benefit your business!
         </p>
       </div>
       
@@ -70,7 +70,7 @@
           <li style="display: inline; margin: 10px"><a href="About.aspx">About Us</a></li>
           <li style="display: inline; margin: 10px"><a href="Contact.aspx">Contact Information</a></li>
           <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press</a></li>
-          <li style="display: inline; margin: 10px"><a href="#">Privacy</a></li>
+          <li style="display: inline; margin: 10px">This site is for academic credit only and it does not represent any real organization. No goods or services are offered or implied.</li>
         </ul>
       </div>
     </footer>

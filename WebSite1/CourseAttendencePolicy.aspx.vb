@@ -1,5 +1,5 @@
 ﻿
-Partial Class Account_courseListing
+Partial Class CourseAttendencePolicy
     Inherits System.Web.UI.Page
 
 End Class

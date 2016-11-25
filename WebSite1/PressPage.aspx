@@ -2,47 +2,31 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <p>
-        <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Back on Course</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
     <div class="container">
       <div class="col-md-1"><!--margin to the left--></div>
       <div class="col-md-6">
-        <h2>Press Centre</h2>
+        <h2 style="font-size: xx-large">Press Centre</h2>
     <hr>
-        <p style="font-weight: bold; font-size: large">
+        <p style="font-weight: bold; font-size: x-large">
             Press Release</p>
           <p>
               <a href="JoinNewPage.aspx">Join Us Now!</a></p>
           <p>
-              &nbsp;</p>
-          <p style="font-weight: bold; font-size: large">
-              In the News</p>
+              <a href="ClientPromotionPage.aspx"> Our Client, EllisDon, Recognized for Promoting Health and Safety</a></p>
           <p>
               &nbsp;</p>
+          <p style="font-weight: bold; font-size: x-large">
+              In the News</p>
+          <p>
+             <a href="http://www.cbc.ca/news/canada/windsor/unifor-moreau-safety-workplace-1.3839537">Call to Strengthen Workplace Safety Legislation</a></p>
+          <p>
+             <a href="http://www.cbc.ca/news/canada/edmonton/more-needs-to-be-done-on-workplace-safety-alberta-auditor-general-says-1.3665342"> Alberta Auditor General Urges More Needs to be Done on Workplace Safety</a></p>
+          <p>
+             <a href="http://globalnews.ca/news/3040125/ohs-investigating-after-worker-dies-at-south-edmonton-work-site/"> Ocupation Health and Safety Investigates City Worker Death at Workplace Accident</a></p>
     <hr>
       </div>
       
       <div class="col-md-1"><!--margin to the right--></div>
-    </div>
-  </body>
-</html>&nbsp;</p>
+ </div>
 </asp:Content>
 

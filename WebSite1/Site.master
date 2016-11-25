@@ -12,6 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/Content/dashboard.css" rel="stylesheet"/>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
@@ -39,18 +40,20 @@
 
         <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
         <div class="navbar navbar-inverse navbar-fixed-top">
-           <div class="container">
+           <div class ="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Back on Course</a>
+                    <a class="navbar-brand" runat="server" href="Default.aspx">Back on Course</a>
+
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Courses</a></li>
+                        <li><a runat="server" href="courseListing.aspx">Courses</a></li>
+                         <li><a runat="server" href="Products.aspx">Products</a></li>
                     </ul>
                     <% If Session("id") Is Nothing Then%>
                     <div class="navbar-form navbar-right"> 
@@ -64,7 +67,7 @@
                     </div>
                     <% Else %>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                        <li><a href="Cart.aspx"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=Session("firstName") %><span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -89,5 +92,6 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
 </body>
 </html>
