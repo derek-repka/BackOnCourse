@@ -11,16 +11,44 @@
                 <div class="panel panel-default">
                 <!-- Default panel contents -->
                     <div class="panel-heading">Your Shopping Cart</div>
-                    <!-- List group -->
-                    <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
+                    <!-- start of cartProdcutDataSource -->
+                    <asp:SqlDataSource ID="cartProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformOrderLine.quantity, platformProduct.productName, platformProduct.price AS productPrice, platformStyle.styleDescription, platformOrderLine.orderLineID FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID WHERE (platformOrder.orderStatusID = 1) AND (platformUser.userID = @userID)">
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                
+                    <!-- start of cartWorkshopDataSource -->
+                    <asp:SqlDataSource ID="cartWorkshopDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformWorkshop.city, platformWorkshop.location, platformWorkshop.dateTime, platformWorkshop.price, platformOrderLine.quantity, platformTopic.topicCode, platformOrderLine.orderLineID FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformWorkshop ON platformOrderLine.workshopID = platformWorkshop.workshopID LEFT OUTER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID WHERE (platformUser.userID = @userID) AND (platformOrder.orderStatusID = 1)">                                  
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+
+                    <br />
+                    <asp:GridView ID="CartProductGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Ecourse and Physical Product in Your Cart">
+                        <Columns>
+                            <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+                            <asp:BoundField DataField="productName" HeaderText="productName" SortExpression="productName" />
+                            <asp:BoundField DataField="productPrice" HeaderText="productPrice" SortExpression="productPrice" />
+                            <asp:BoundField DataField="styleDescription" HeaderText="styleDescription" SortExpression="styleDescription" />
+                        </Columns>
+                    </asp:GridView>
+             
+                    <!-- gridview for cartWorkshopGridview -->
+                    <asp:GridView ID="CartWorkshopGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="cartWorkshopDataSource" EmptyDataText="No Workshop in Your Cart">
+                        <Columns>
+                            <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
+                            <asp:BoundField DataField="location" HeaderText="location" SortExpression="location" />
+                            <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
+                            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+                            <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+                            <asp:BoundField DataField="topicCode" HeaderText="topicCode" SortExpression="topicCode" />
+                        </Columns>
+                    </asp:GridView>
+
+                    </div>
                 </div>
-            </div>
             <!-- this is the start of payment details col -->
             <div class="col-md-4">
             <div class="row">
@@ -75,8 +103,7 @@
                 </li>
             </ul>
             <br/>
-            <a href="http://www.ualberta.ca" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
-                <!-- do we actually need the the purchase page and confirmation page, because we don't have database for payment system -->
+            <a href="Confirmation.aspx" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
             </div>
             </div>
             </div>
