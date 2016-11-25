@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <div role="form">
                         <div class="form-group">
                             <label for="cardNumber">
                                 CARD NUMBER</label>
@@ -95,7 +95,7 @@
                                 </div>
                         </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <ul class="nav nav-pills nav-stacked">

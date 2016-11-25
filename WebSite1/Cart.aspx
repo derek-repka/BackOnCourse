@@ -67,7 +67,10 @@
               </div>
               <div class="panel-footer">
                   <div class="text-right">
-                      <h4>Course Price: $CDN 1,600</h4>
+                      <h4>Total Price:&nbsp;&nbsp;
+                          <asp:Label ID="TotalPrice" runat="server" Text="TotalPrice"></asp:Label>
+                      </h4>
+                      <asp:SqlDataSource ID="totalPriceDataSource" runat="server"></asp:SqlDataSource>
                       <a href="Purchase.aspx" class="btn btn-primary">Checkout</a>
                   </div>
               </div>
