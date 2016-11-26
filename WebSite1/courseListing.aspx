@@ -8,7 +8,7 @@
     <p>
         &nbsp;</p>
     <p>
-        &nbsp;</p>
+        Please select a topic, type in a city, choose a date, then click search.</p>
     <p>
         <br />
     </p>
