@@ -29,15 +29,28 @@
                   </SelectParameters>
               </asp:SqlDataSource>
               
+              <asp:SqlDataSource ID="userSqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" EnableCaching="True" InsertCommand="INSERT INTO platformOrder(orderDate, userID, orderStatusID) VALUES (@orderDate, @userID, @orderStatusID)" SelectCommand="SELECT orderID, orderDate, userID, orderStatusID FROM platformOrder WHERE (userID = @userID) AND (orderStatusID = 1)">
+                  <InsertParameters>
+                      <asp:Parameter Name="orderDate" />
+                      <asp:Parameter Name="userID" />
+                      <asp:Parameter Name="orderStatusID" />
+                  </InsertParameters>
+                  <SelectParameters>
+                      <asp:SessionParameter Name="userID" SessionField="1" />
+                  </SelectParameters>
+              </asp:SqlDataSource>
+              
           </div>
            <div class="panel-footer">
             <div class="text-right">
               <form class="form-inline">
                 <h4>Course Price:<asp:Label ID="Price" runat="server" ></asp:Label></h4>
-                <div class="form-group">
+                <div class="form-group" id="WorkShopCartButton">
+              
+                    <asp:Button CssClass="btn btn-primary" ID="workshopCartButton" runat="server" Text="Add to Cart" />
               
                 </div>
-                <button type="submit" class="btn btn-primary">Add to Cart</button>
+               
               </form>
             </div>
           </div>
