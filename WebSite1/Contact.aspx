@@ -104,8 +104,8 @@
                     Comment:<br />
                     <input class="auto-style1" name="comment" size="400" type="text" /><br />
                     <br />
-                    <input type="submit" value="Send" />
-                    <input type="reset" value="Reset" />
+                    <input class="btn btn-primary" type="submit" value="Send"/>
+                    <input class="btn btn-primary" type="reset" value="Reset"/>
                 </form></p>
             </div>
             <div class="col-md-4">

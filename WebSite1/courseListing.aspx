@@ -21,7 +21,7 @@
         </div>
           <div style="float:left;width:289px; height: 22px;">Course Date: <asp:TextBox id="courseDate" runat="server"></asp:TextBox><asp:Button ID="calanderButton" runat="server" Text="..." Height="18px" Width="19px"/>
           </div>
-          <div style="float:left;width:243px"><asp:Button ID="searchButton" runat="server" Text="Search" />
+          <div style="float:left;width:243px"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
       </div>
     <p>
