@@ -14,7 +14,8 @@
             <div class="col-xs-9">
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
               <h5>Topic: <asp:Label ID="TopicHolder" runat="server" ></asp:Label></h5>
-              <h5>Instructor: <asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
+              <h5>&nbsp;<asp:Label ID="InstructorLabel" runat="server" Text="Instructor: "></asp:Label>
+                  <asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
               <h5>Offered By: <asp:Label ID="Firm" runat="server" ></asp:Label></h5>
               <h5>Currently Available: <asp:Label ID="Status" runat="server" ></asp:Label></h5>
               <h5>&nbsp;</h5>
@@ -22,7 +23,7 @@
               <p>Description: <asp:Label ID="Description" runat="server" ></asp:Label></p>
             </div>
               <!-- We did not use the category information because we combined it with the style table -->
-              <asp:SqlDataSource ID="productSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformProduct.productID, platformProduct.productName, platformFirm.firmName, platformInstructor.lastName, platformInstructor.firstName, platformEcourse.ecourseSubject, platformEcourse.price, platformEcourse.expirationDate, platformTopic.topicCode, platformStyle.styleDescription, platformProduct.price AS Expr1, platformProduct.description, platformProduct.discontinued FROM platformProduct LEFT OUTER JOIN platformEcourse ON platformProduct.productID = platformEcourse.productID LEFT OUTER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID LEFT OUTER JOIN platformFirm ON platformProduct.firmID = platformFirm.firmID AND platformEcourse.firmID = platformFirm.firmID LEFT OUTER JOIN platformInstructor ON platformEcourse.instructorID = platformInstructor.instructorID WHERE (platformProduct.productID = @productID)" InsertCommand="INSERT INTO platformOrderLine(orderID, productID, workshopID, quantity) VALUES (@orderID, @productID, @workshopID, @quantity)">
+              <asp:SqlDataSource ID="productSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformProduct.productName, platformFirm.firmName, platformInstructor.lastName, platformInstructor.firstName, platformEcourse.expirationDate, platformTopic.topicCode, platformProduct.price, platformProduct.description, platformProduct.discontinued FROM platformProduct LEFT OUTER JOIN platformEcourse ON platformProduct.productID = platformEcourse.productID LEFT OUTER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID LEFT OUTER JOIN platformFirm ON platformProduct.firmID = platformFirm.firmID AND platformEcourse.firmID = platformFirm.firmID LEFT OUTER JOIN platformInstructor ON platformEcourse.instructorID = platformInstructor.instructorID WHERE (platformProduct.productID = @productID)" InsertCommand="INSERT INTO platformOrderLine(orderID, productID, workshopID, quantity) VALUES (@orderID, @productID, @workshopID, @quantity)">
                   <InsertParameters>
                       <asp:Parameter Name="orderID" />
                       <asp:Parameter Name="productID" />
@@ -30,7 +31,7 @@
                       <asp:Parameter Name="quantity" />
                   </InsertParameters>
                   <SelectParameters>
-                      <asp:QueryStringParameter DefaultValue="1" Name="productID" QueryStringField="productID" />
+                      <asp:QueryStringParameter DefaultValue="" Name="productID" QueryStringField="productID" />
                   </SelectParameters>
               </asp:SqlDataSource>
               <asp:SqlDataSource ID="userSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO platformOrder(orderDate, userID, orderStatusID) VALUES (@orderDate, @userID, @orderStatusId)" SelectCommand="SELECT orderID, orderDate, userID, orderStatusID FROM platformOrder WHERE (userID = @userID) AND (orderStatusID = 1)">
