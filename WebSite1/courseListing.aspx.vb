@@ -17,7 +17,7 @@ Partial Class corseListing3
 
     Private Sub Courses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Courses.SelectedIndexChanged
         Dim id As String = Courses.Rows(Courses.SelectedIndex).Cells(7).Text
-        Response.Redirect("CourseDetail.aspx?id=" + id)
+        Response.Redirect("WorkShopDetail.aspx?id=" + id)
 
     End Sub
 
