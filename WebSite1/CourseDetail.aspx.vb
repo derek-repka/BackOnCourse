@@ -12,8 +12,13 @@ Partial Class CourseDetail
             TopicHolder.Text = dv(0)(8)
             Firm.Text = dv(0)(2)
             Instructor.Text = dv(0)(4) + " " + dv(0)(3)
-            Description.Text = dv(0)(11)
+            If DBNull.Value.Equals(dv(0)(11)) Then
+                Description.Text = ""
+            Else
+                Description.Text = dv(0)(11)
+            End If
             Status.Text = dv(0)(12)
+            Price.Text = dv(0)(10)
             If Status.Text = "N" Then
                 Status.Text = "No"
                 CartCourseButton.Text = "Not available"
@@ -21,10 +26,10 @@ Partial Class CourseDetail
 
             ElseIf Status.Text = "Y" Then
                 Status.Text = "Yes"
-            End If
+                End If
 
-            Price.Text = dv(0)(10)
-            End If
+
+        End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
