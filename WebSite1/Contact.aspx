@@ -91,12 +91,12 @@
                     </style>
 
                 <p class="auto-style4" style="font-family: Arial, Helvetica, sans-serif">
-                    Problems? Concerns? We are here to answer &quot;any&quot; questions you may have about ____. &quot;Any &quot; incldues techincal, customer support or even if you just wanted to just have a chat! Free feel to reach out to us and we will respond as soon as possible!
+                    Problems? Concerns? We are here to answer &quot;any&quot; questions you may have about Back on Course. &quot;Any &quot; incldues techincal, customer support or even if you just wanted to just have a chat! Free feel to reach out to us and we will respond as soon as possible!
                 </p>
                 <p class="auto-style5" style="font-family: arial, Helvetica, sans-serif">
                     If we can&#39;t answer your question, we will do our best to find an answer for you!
                 </p>
-                <form action="mailto:someone@example.com" class="auto-style3" enctype="text/plain" method="post" style="font-family: Arial, Helvetica, sans-serif">
+               <form action="mailto:contact.backoncourse@gmail.com" enctype="text/plain" method="post" style="font-family: Arial, Helvetica, sans-serif">
                     Name:<br />
                     <input class="auto-style6" name="name" type="text" /><br />
                     E-mail:<br />
@@ -104,15 +104,15 @@
                     Comment:<br />
                     <input class="auto-style1" name="comment" size="400" type="text" /><br />
                     <br />
-                    <input type="submit" value="Send" />
-                    <input type="reset" value="Reset" />
+                    <input class="btn btn-primary" type="submit" value="Send"/>
+                    <input class="btn btn-primary" type="reset" value="Reset"/>
                 </form></p>
             </div>
             <div class="col-md-4">
                 <aside id="contact-info">
                     <dl>
                         <dt>Email</dt>
-                        <dd><a href="mailto:example@gmail.com" title="Click to send us an email">example@gmail.com</a></dd>
+                        <dd><a href="mailto:contact.backoncourse@gmail.com" title="Click to send us an email">contact.backoncourse@gmail.com</a></dd>
                         <dt>Telephone</dt>
                         <dd>(780)123-4567</dd>
                         <dt>Address</dt>
@@ -126,7 +126,7 @@
 
                             </address>
                         </dd>
-
+                        </dl>
 
                 </aside>
             </div>

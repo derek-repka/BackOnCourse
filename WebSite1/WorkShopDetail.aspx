@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Product" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="WorkshopDetail.aspx.vb" Inherits="WorkshopDetail" %>
+﻿<%@ Page Title="Product" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="WorkShopDetail.aspx.vb" Inherits="WorkShopDetail" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -15,6 +15,7 @@
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
               <h5>Topic: <asp:Label ID="Topic" runat="server" ></asp:Label></h5>
               <h5>Instructor:<asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
+              <h5>Offered by: <asp:Label ID="Firm" runat="server" ></asp:Label></h5>
               <h5>Location:<asp:Label ID="Location" runat="server" ></asp:Label></h5>
               <h5>City:<asp:Label ID="City" runat="server" ></asp:Label></h5>
               <h5>Schedule: <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
@@ -23,35 +24,38 @@
             </div>
               <!-- We did not use the category information because we combined it with the style table -->
               
-              <asp:SqlDataSource ID="workshopSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT workshopID, city, location, dateTime, topicID, firmID, instructorID FROM platformWorkshop WHERE (workshopID = @workshopID)">
+              <asp:SqlDataSource ID="workshopSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformWorkshop.workshopID, platformWorkshop.city, platformWorkshop.location, platformWorkshop.dateTime, platformWorkshop.price, platformTopic.topicCode, platformInstructor.lastName, platformInstructor.firstName, platformFirm.firmName FROM platformWorkshop INNER JOIN platformInstructor ON platformWorkshop.instructorID = platformInstructor.instructorID INNER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID INNER JOIN platformFirm ON platformWorkshop.firmID = platformFirm.firmID WHERE (platformWorkshop.workshopID = @workshopID)" InsertCommand="INSERT INTO platformOrderLine(orderID, productID, workshopID, quantity) VALUES (@orderID, @productID, @workshopID, @quantity)">
+                  <InsertParameters>
+                      <asp:Parameter Name="orderID" />
+                      <asp:Parameter Name="productID" />
+                      <asp:Parameter Name="workshopID" />
+                      <asp:Parameter Name="quantity" />
+                  </InsertParameters>
                   <SelectParameters>
-                      <asp:QueryStringParameter DefaultValue="1" Name="workshopID" QueryStringField="workshopID" />
+                      <asp:QueryStringParameter DefaultValue="2" Name="workshopID" QueryStringField="workshopID" />
                   </SelectParameters>
               </asp:SqlDataSource>
               
-              <asp:SqlDataSource ID="userSqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" EnableCaching="True" InsertCommand="INSERT INTO platformOrder(orderDate, userID, orderStatusID) VALUES (@orderDate, @userID, @orderStatusID)" SelectCommand="SELECT orderID, orderDate, userID, orderStatusID FROM platformOrder WHERE (userID = @userID) AND (orderStatusID = 1)">
+              <asp:SqlDataSource ID="userSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" EnableCaching="True" InsertCommand="INSERT INTO platformOrder(orderDate, userID, orderStatusID) VALUES (@orderDate, @userID, @orderStatusID)" SelectCommand="SELECT orderID, orderDate, userID, orderStatusID FROM platformOrder WHERE (userID = @userID) AND (orderStatusID = 1)">
                   <InsertParameters>
                       <asp:Parameter Name="orderDate" />
                       <asp:Parameter Name="userID" />
                       <asp:Parameter Name="orderStatusID" />
                   </InsertParameters>
                   <SelectParameters>
-                      <asp:SessionParameter Name="userID" SessionField="1" />
+                      <asp:SessionParameter Name="userID" SessionField="id" />
                   </SelectParameters>
               </asp:SqlDataSource>
               
           </div>
            <div class="panel-footer">
             <div class="text-right">
-              <form class="form-inline">
+              <div class="form-inline">
                 <h4>Course Price:<asp:Label ID="Price" runat="server" ></asp:Label></h4>
                 <div class="form-group" id="WorkShopCartButton">
-              
                     <asp:Button CssClass="btn btn-primary" ID="workshopCartButton" runat="server" Text="Add to Cart" />
-              
                 </div>
-               
-              </form>
+              </div>
             </div>
           </div>
         </div>
