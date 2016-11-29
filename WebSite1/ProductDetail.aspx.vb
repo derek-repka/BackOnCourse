@@ -17,14 +17,24 @@ Partial Class ProductDetail
             End If
             Status.Text = dv(0)(6)
             Price.Text = dv(0)(4)
-            If Status.Text = "N" Then
+
+            If Status.Text = "Y" Then
                 Status.Text = "No"
                 CartCourseButton.Text = "Not available"
                 CartCourseButton.Enabled = False
 
-            ElseIf Status.Text = "Y" Then
+            ElseIf Status.Text = "N" Then
                 Status.Text = "Yes"
             End If
+
+            qtyAvailable.Text = dv(0)(7)
+            If qtyAvailable.Text = 0 Then
+                amtRemaining.Text = "Sorry, this product is sold out."
+                qtyAvailable.Text = ""
+                CartCourseButton.Text = "Not available"
+                CartCourseButton.Enabled = False
+            End If
+
         End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load

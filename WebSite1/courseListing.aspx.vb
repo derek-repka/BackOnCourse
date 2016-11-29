@@ -23,6 +23,7 @@ Partial Class corseListing3
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         Courses.Visible = True
+        Courses.DataBind()
     End Sub
 
 

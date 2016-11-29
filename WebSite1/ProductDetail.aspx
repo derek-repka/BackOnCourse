@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ProductDetail.aspx.vb" Inherits="ProductDetail" %>
+﻿<%@ Page Title="Product" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="ProductDetail.aspx.vb" Inherits="ProductDetail" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -50,8 +50,10 @@
               <div class="form-inline">
                 <h4>Course Price:<asp:Label ID="Price" runat="server" ></asp:Label></h4>
                 <div class="form-group">
-              
                 </div>
+                  <p>
+                      <asp:Label ID="amtRemaining" runat="server" Text="Amount Remaining:"></asp:Label>
+&nbsp;<asp:Label ID="qtyAvailable" runat="server"></asp:Label></p>
                   <asp:Button CssClass="btn btn-primary" ID="CartCourseButton" runat="server" Text="Add to cart" />
                   <br />
                   <br />

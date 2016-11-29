@@ -5,7 +5,7 @@
     <div class="container" style="margin-top: 20px">
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
-          <div class="panel-heading"><h3 class="panel-title">Course Information</h3></div>
+          <div class="panel-heading"><h3 class="panel-title">Workshop Information</h3></div>
           <div class="panel-body">
             <div class="col-xs-3">
               <img src="assets/vince.jpg" alt="140x140" class="img-thumbnail">

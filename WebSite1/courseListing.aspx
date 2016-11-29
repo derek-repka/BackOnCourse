@@ -14,10 +14,10 @@
     </p>
       <div><div style="float:left;width:209px">
           Course Topic:
-       <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
+       <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" DataTextField="Topic" DataValueField="Topic">
        </asp:DropDownList>
           </div>
-          <div style="float:left;width:221px"> City: <asp:TextBox ID="cityBox" runat="server" AutoPostBack="True" style="margin-top: 0"></asp:TextBox>
+          <div style="float:left;width:221px"> City: <asp:TextBox ID="cityBox" runat="server" style="margin-top: 0"></asp:TextBox>
         </div>
           <div style="float:left;width:289px; height: 22px;">Course Date: <asp:TextBox id="courseDate" runat="server"></asp:TextBox><asp:Button ID="calanderButton" runat="server" Text="..." Height="18px" Width="19px"/>
           </div>
@@ -28,18 +28,28 @@
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
      <div><div style="float:left;width:486px">
-          </div>
+           </div>
           <div style="float:left;width:226px">
               <asp:Calendar ID="Calendar1" runat="server" Visible="False"></asp:Calendar>
         </div>
-         <br />
-         <br />
          <br />
       </div>
     <p>
         &nbsp;</p>
     <p>
-        <asp:GridView ID="Courses" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False" DataKeyNames="Workshop Number">
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        <asp:GridView ID="Courses" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" DataKeyNames="Workshop Number" Visible="False">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
