@@ -1,6 +1,12 @@
 ﻿
+Imports System.Data
+
 Partial Class CartPage
     Inherits System.Web.UI.Page
+    Protected Sub Page_LoadComplete(sender As Object, e As EventArgs)
+        Dim dv As DataView = CType(totalPriceDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+        TotalPrice.Text = dv(0)(0)
+    End Sub
 
     'Declare variable used to store value of Subtotal
     Private Subtotal_Product As Decimal = 0.0
