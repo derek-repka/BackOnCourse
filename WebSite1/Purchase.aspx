@@ -24,6 +24,13 @@
                             <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
                         </SelectParameters>
                     </asp:SqlDataSource>
+                    
+                    <!-- this is the data source for  pay button which update the order from pending to complete -->
+                    <asp:SqlDataSource ID="paymentDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformOrderLine.orderLineID FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID WHERE (platformOrder.orderStatusID = 1) AND (platformUser.userID = @userID)" UpdateCommand="UPDATE platformOrder SET orderStatusID = 3">
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
 
                     <br />
                     <asp:GridView ID="CartProductGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Ecourse and Physical Product in Your Cart">
@@ -98,12 +105,16 @@
                     </div>
                 </div>
             </div>
-            <ul class="nav nav-pills nav-stacked">
+            <!-- this button literally does nothing I want to delete it -->
+            <!--<ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
                 </li>
             </ul>
-            <br/>
-            <a href="Confirmation.aspx" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <br/>-->
+
+            <a href="Confirmation.aspx" class="btn btn-success btn-lg btn-block" role="button">Pay</a>       
+            <asp:Button ID="Button1" runat="server" Text="Button" ControlStyle-CssClass="btn btn-success btn-lg btn-block" href="Confirmation.aspx"/>
+                <br />          
             </div>
             </div>
             </div>
