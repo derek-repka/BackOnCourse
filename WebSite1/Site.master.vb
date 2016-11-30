@@ -75,12 +75,13 @@ Public Partial Class SiteMaster
                 Session("lastName") = dv(0)(5)
                 Session("email") = dv(0)(3)
                 Session("type") = dv(0)(6)
+                Response.Redirect("customer/Dashboard.aspx")
             End If
         End If
     End Sub
 
     Protected Sub Logout(sender As Object, e As EventArgs)
         Session.Abandon()
-        Response.Redirect("Default.aspx")
+        Response.Redirect("/Default.aspx")
     End Sub
 End Class
