@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="CourseListing.aspx.vb" Inherits="corseListing3" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="CourseListing.aspx.vb" Inherits="CourseListing" %>
 
 <script runat="server">
 
@@ -14,12 +14,15 @@
     </p>
       <div><div style="float:left;width:209px">
           Course Topic:
-       <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" DataTextField="Topic" DataValueField="Topic">
+       <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" 
+              DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
        </asp:DropDownList>
           </div>
-          <div style="float:left;width:221px"> City: <asp:TextBox ID="cityBox" runat="server" style="margin-top: 0"></asp:TextBox>
+          <div style="float:left;width:221px"> City: <asp:TextBox ID="cityBox" runat="server" 
+                  style="margin-top: 0" AutoPostBack="True"></asp:TextBox>
         </div>
-          <div style="float:left;width:289px; height: 22px;">Course Date: <asp:TextBox id="courseDate" runat="server"></asp:TextBox><asp:Button ID="calanderButton" runat="server" Text="..." Height="18px" Width="19px"/>
+          <div style="float:left;width:289px; height: 22px;">Course Date: 
+              <asp:TextBox id="courseDate" runat="server" AutoPostBack="True"></asp:TextBox><asp:Button ID="calanderButton" runat="server" Text="..." Height="18px" Width="19px"/>
           </div>
           <div style="float:left;width:243px"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
@@ -49,7 +52,11 @@
     <p>
         &nbsp;</p>
     <p>
-        <asp:GridView ID="Courses" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" DataKeyNames="Workshop Number" Visible="False">
+        <asp:GridView ID="Courses" runat="server" Width="811px" 
+            AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" 
+            Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" 
+            BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" 
+            DataKeyNames="Workshop Number">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
@@ -71,17 +78,20 @@
         </asp:GridView>
             </p>
 
-        <asp:SqlDataSource ID="sqlCourses" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformWorkshop.city AS City, platformWorkshop.location AS Location, platformWorkshop.dateTime AS [Date &amp; Time], platformTopic.topicCode AS Topic, platformWorkshop.price AS Price, platformFirm.firmName AS [Hosting Firm], platformWorkshop.workshopID AS [Workshop Number] FROM platformWorkshop INNER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID INNER JOIN platformFirm ON platformWorkshop.firmID = platformFirm.firmID WHERE (platformTopic.topicCode = @topic) AND (platformWorkshop.city LIKE @city) AND (platformWorkshop.dateTime &gt;= @date)">
+        <asp:SqlDataSource ID="sqlCourses" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" 
+        SelectCommand="SELECT platformWorkshop.city AS City, platformWorkshop.location AS Location, platformWorkshop.dateTime AS [Date &amp; Time], platformTopic.topicCode AS Topic, platformWorkshop.price AS Price, platformFirm.firmName AS [Hosting Firm], platformWorkshop.workshopID AS [Workshop Number] FROM platformWorkshop INNER JOIN platformTopic ON platformWorkshop.topicID = platformTopic.topicID INNER JOIN platformFirm ON platformWorkshop.firmID = platformFirm.firmID WHERE (platformTopic.topicCode = @topic) AND (@city is null or platformWorkshop.city LIKE @city) AND (@date is null or platformWorkshop.dateTime &gt;= @date)" 
+        CancelSelectOnNullParameter="False">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="topicslist" Name="topic" PropertyName="SelectedValue" />
                     <asp:ControlParameter ControlID="cityBox" Name="city" PropertyName="Text" />
                     <asp:ControlParameter ControlID="Calendar1" Name="date" PropertyName="SelectedDate" />
                 </SelectParameters>
         </asp:SqlDataSource>
-    </p>
+  
 
     <p>
-        &nbsp;</p>
+        <asp:Label ID="NoResult" runat="server"></asp:Label></p>
     <p>
         &nbsp;</p>
     <p>

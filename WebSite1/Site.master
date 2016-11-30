@@ -52,9 +52,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="courseListing.aspx">Workshops</a></li>
-                           <li><a runat="server" href="ProductSearchPage.aspx?type=courses">Courses</a></li>
-                         <li><a runat="server" href="ProductSearchPage.aspx?type=products">Products</a></li>
+                        <li><a runat="server" href="/CourseListing.aspx">Workshops</a></li>
+                           <li><a runat="server" href="/ProductSearchPage.aspx?type=courses">Courses</a></li>
+                         <li><a runat="server" href="/ProductSearchPage.aspx?type=products">Products</a></li>
                     </ul>
                     <% If Session("id") Is Nothing Then%>
                     <div class="navbar-form navbar-right"> 
@@ -75,7 +75,7 @@
                             <ul class="dropdown-menu">
                             <li><a href="#">Settings</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="Default.aspx" runat="server" onserverclick="Logout">Log out</a></li>
+                            <li><a href="/Default.aspx" runat="server" onserverclick="Logout">Log out</a></li>
                             </ul>
                         </li>
                     </ul>
