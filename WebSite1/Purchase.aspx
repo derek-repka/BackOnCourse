@@ -64,12 +64,6 @@
                         <h3 class="panel-title">
                             Payment Details
                         </h3>
-                    <div class="checkbox pull-right">
-                        <label>
-                            <input type="checkbox" />
-                            Remember
-                        </label>
-                    </div>
                 </div>
                 <div class="panel-body">
                     <div role="form">
@@ -109,8 +103,8 @@
                 <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
                 </li>
             </ul>
-            <br/>
-                <a href="Confirmation.aspx" class="btn btn-success btn-lg btn-block" role="button">Pay</a>  
+                <br/>
+                <a ID="payButton" runat="server" href="#" onserverclick="Pay" class="btn btn-success btn-lg btn-block" role="button">Pay</a>  
             </div>
             </div>
             </div>
@@ -118,6 +112,5 @@
          </div>
       </div>
     <!-- the end of the order list -->
-
 </asp:Content>
 
