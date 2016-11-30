@@ -35,6 +35,11 @@ Partial Class ProductDetail
                 CartCourseButton.Enabled = False
             End If
 
+            If Session("id") Is Nothing Then
+                CartCourseButton.Enabled = False
+                NonMember.Text = "You are not currently signed in. Please sign in to add to your cart."
+            End If
+
         End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load

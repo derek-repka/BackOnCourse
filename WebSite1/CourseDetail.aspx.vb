@@ -25,36 +25,34 @@ Partial Class CourseDetail
             ElseIf Status.Text = "N" Then
                 Status.Text = "Yes"
             End If
-
-
+            If Session("id") Is Nothing Then
+                CartCourseButton.Enabled = False
+                NonMember.Text = "You are not currently signed in. Please sign in to add to your cart."
+            End If
         End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
     End Sub
     Protected Sub CartCourse_Click(sender As Object, e As EventArgs) Handles CartCourseButton.Click
-        If Session("id") Is Nothing Then
-            NonMember.Text = "You are not currently signed in. Please sign in to add products to your cart."
-        Else
-            Dim productid As Integer = Request.QueryString("id")
-            Dim userid As Integer = Session("id")
-            Dim userDV As DataView = CType(userSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+        Dim productid As Integer = Request.QueryString("id")
+        Dim userid As Integer = Session("id")
+        Dim userDV As DataView = CType(userSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
 
-            If userDV.Count = 0 Then
-                Dim curDate As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                userSqlDataSource.InsertParameters("orderDate").DefaultValue = curDate
-                userSqlDataSource.InsertParameters("userID").DefaultValue = userid
-                userSqlDataSource.InsertParameters("orderStatusId").DefaultValue = 1
-                userSqlDataSource.Insert()
+        If userDV.Count = 0 Then
+            Dim curDate As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+            userSqlDataSource.InsertParameters("orderDate").DefaultValue = curDate
+            userSqlDataSource.InsertParameters("userID").DefaultValue = userid
+            userSqlDataSource.InsertParameters("orderStatusId").DefaultValue = 1
+            userSqlDataSource.Insert()
 
-            End If
-            userDV = CType(userSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
-            courseSqlDataSource.InsertParameters("orderID").DefaultValue = userDV(0)(0)
-            courseSqlDataSource.InsertParameters("productID").DefaultValue = productid
-            courseSqlDataSource.InsertParameters("workshopID").DefaultValue = Nothing
-            courseSqlDataSource.InsertParameters("quantity").DefaultValue = 1
-
-            Dim count As Integer = courseSqlDataSource.Insert()
         End If
+        userDV = CType(userSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+        courseSqlDataSource.InsertParameters("orderID").DefaultValue = userDV(0)(0)
+        courseSqlDataSource.InsertParameters("productID").DefaultValue = productid
+        courseSqlDataSource.InsertParameters("workshopID").DefaultValue = Nothing
+        courseSqlDataSource.InsertParameters("quantity").DefaultValue = 1
+
+        Dim count As Integer = courseSqlDataSource.Insert()
     End Sub
 End Class

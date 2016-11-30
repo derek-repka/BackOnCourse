@@ -22,7 +22,7 @@
                   style="margin-top: 0" AutoPostBack="True"></asp:TextBox>
         </div>
           <div style="float:left;width:289px; height: 22px;">Course Date: 
-              <asp:TextBox id="courseDate" runat="server" AutoPostBack="True"></asp:TextBox><asp:Button ID="calanderButton" runat="server" Text="..." Height="18px" Width="19px"/>
+              <asp:TextBox id="courseDate" runat="server" AutoPostBack="True"></asp:TextBox><button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal">...</button>
           </div>
           <div style="float:left;width:243px"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
@@ -30,13 +30,6 @@
     <p>
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
-     <div><div style="float:left;width:486px">
-           </div>
-          <div style="float:left;width:226px">
-              <asp:Calendar ID="Calendar1" runat="server" Visible="False"></asp:Calendar>
-        </div>
-         <br />
-      </div>
     <p>
         <asp:GridView ID="Courses" CssClass="table table-striped table-bordered table-hover" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" DataKeyNames="Workshop Number">
                 <Columns>
@@ -66,5 +59,22 @@
 
     <p>
         &nbsp;</p>
-    <p>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </asp:Content>

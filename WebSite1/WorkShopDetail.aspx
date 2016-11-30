@@ -54,6 +54,8 @@
                 <h4>Course Price:<asp:Label ID="Price" runat="server" ></asp:Label></h4>
                 <div class="form-group" id="WorkShopCartButton">
                     <asp:Button CssClass="btn btn-primary" ID="workshopCartButton" runat="server" Text="Add to Cart" />
+                    <br />
+                    <asp:Label ID="Nonmember" runat="server"></asp:Label>
                 </div>
               </div>
             </div>

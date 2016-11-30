@@ -1,14 +1,6 @@
 ﻿
 Partial Class CourseListing
     Inherits System.Web.UI.Page
-    Private Sub calanderButton_Click(sender As Object, e As EventArgs) Handles calanderButton.Click
-        If (Calendar1.Visible = False) Then
-            Calendar1.Visible = True
-        Else
-            Calendar1.Visible = False
-        End If
-    End Sub
-
     Private Sub Calendar1_SelectionChanged(sender As Object, e As EventArgs) Handles Calendar1.SelectionChanged
         courseDate.Text = Calendar1.SelectedDate.ToShortDateString()
         Calendar1.Visible = False

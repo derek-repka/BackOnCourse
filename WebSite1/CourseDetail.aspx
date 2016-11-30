@@ -54,7 +54,6 @@
                 </div>
                   <asp:Button CssClass="btn btn-primary" ID="CartCourseButton" runat="server" Text="Add to cart" />
                   <br />
-                  <br />
                   <asp:Label ID="NonMember" runat="server"></asp:Label>
               </div>
             </div>

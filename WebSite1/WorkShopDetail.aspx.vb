@@ -22,6 +22,11 @@ Partial Class WorkShopDetail
             workshopCartButton.Enabled = False
             workshopCartButton.Text = "Not available"
         End If
+
+        If Session("id") Is Nothing Then
+            workshopCartButton.Enabled = False
+            Nonmember.Text = "You are not currently signed in. Please sign in to add to your cart."
+        End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
