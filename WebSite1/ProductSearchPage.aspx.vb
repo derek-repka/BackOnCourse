@@ -4,33 +4,23 @@ Partial Class ProductSearchPage
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim type As String = Request.QueryString("type")
         If type = "courses" Then
+            eCourseDescriptionGrid.Visible = True
             TypeLabel.Visible = False
             ProductTypeList.Visible = False
 
 
         ElseIf type = "products" Then
+            ProductDescriptionGrid.Visible = True
 
         End If
 
     End Sub
-    Protected Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+    Protected Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         Dim type As String = Request.QueryString("type")
         If type = "products" Then
-            ProductDescriptionGrid.Visible = True
             ProductDescriptionGrid.DataBind()
-            If ProductDescriptionGrid.Rows.Count() = 0 Then
-                NoResult.Text = "No results. Please change your search parameters."
-            Else
-                NoResult.Text = ""
-            End If
         ElseIf type = "courses" Then
-            eCourseDescriptionGrid.Visible = True
             eCourseDescriptionGrid.DataBind()
-            If eCourseDescriptionGrid.Rows.Count() = 0 Then
-                NoResult.Text = "No results. Please change your search parameters."
-            Else
-                NoResult.Text = ""
-            End If
         End If
 
 

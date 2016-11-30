@@ -38,25 +38,7 @@
          <br />
       </div>
     <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        <asp:GridView ID="Courses" runat="server" Width="811px" 
-            AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" 
-            Height="82px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" 
-            BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" 
-            DataKeyNames="Workshop Number">
+        <asp:GridView ID="Courses" CssClass="table table-striped table-bordered table-hover" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" DataKeyNames="Workshop Number">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
@@ -67,14 +49,6 @@
                     <asp:BoundField DataField="Hosting Firm" HeaderText="Hosting Firm" SortExpression="Hosting Firm" />
                     <asp:BoundField DataField="Workshop Number" HeaderText="Workshop Number" InsertVisible="False" ReadOnly="True" SortExpression="Workshop Number" />
                 </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
             </p>
 
@@ -90,8 +64,6 @@
         </asp:SqlDataSource>
   
 
-    <p>
-        <asp:Label ID="NoResult" runat="server"></asp:Label></p>
     <p>
         &nbsp;</p>
     <p>

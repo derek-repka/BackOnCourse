@@ -6,24 +6,24 @@
     <br />
     <div><div style="float:left;width:209px">
         <asp:Label ID="TopicLabel" runat="server" Text="Topic: "></asp:Label>
-        <asp:DropDownList ID="TopicList" runat="server" DataSourceID="TopicNames" DataTextField="topicCode" DataValueField="topicCode">
+        <asp:DropDownList ID="TopicList" runat="server" DataSourceID="TopicNames" DataTextField="topicCode" DataValueField="topicCode" AutoPostBack="True">
         </asp:DropDownList>
     </div>
     <div style="float:left;width:209px">
         <asp:Label ID="TypeLabel" runat="server" Text="Product Type: "></asp:Label>
-        <asp:DropDownList ID="ProductTypeList" runat="server" DataSourceID="ProductType" DataTextField="Product Type" DataValueField="Product Type">
+        <asp:DropDownList ID="ProductTypeList" runat="server" DataSourceID="ProductType" DataTextField="Product Type" DataValueField="Product Type" AutoPostBack="True">
         </asp:DropDownList>
     </div>
+    <asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
     </div>
     <br />
     <br />
 <asp:SqlDataSource ID="TopicNames" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode FROM platformTopic"></asp:SqlDataSource>
 <asp:SqlDataSource ID="ProductType" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT styleDescription AS 'Product Type' FROM platformStyle WHERE (NOT (styleDescription = N'OnlineCourse'))"></asp:SqlDataSource>
     <br />
-    <asp:Button ID="SearchButton" runat="server" Text="Search" />
 <br />
 <br />
-<asp:GridView ID="ProductDescriptionGrid" runat="server" AutoGenerateColumns="False" DataSourceID="sqlProductListing" AllowSorting="True" DataKeyNames="productID" Visible="False" Width="648px">
+<asp:GridView ID="ProductDescriptionGrid" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="sqlProductListing" AllowSorting="True" DataKeyNames="productID" Visible="False" Width="648px" EmptyDataText="No results. Please change your search parameters.">
     <Columns>
         <asp:CommandField ShowSelectButton="True" />
         <asp:BoundField DataField="Product" HeaderText="Product" SortExpression="Product" />
@@ -41,7 +41,7 @@
     </SelectParameters>
 </asp:SqlDataSource>
     <br />
-    <asp:GridView ID="eCourseDescriptionGrid" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="sqlECourseListing" Visible="False" Width="644px" DataKeyNames="ecourseID">
+    <asp:GridView ID="eCourseDescriptionGrid" CssClass="table table-striped table-bordered table-hover" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="sqlECourseListing" Visible="False" Width="644px" DataKeyNames="ecourseID" EmptyDataText="No results. Please change your search parameters.">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
@@ -57,7 +57,6 @@
             <asp:ControlParameter ControlID="TopicList" Name="topic" PropertyName="SelectedValue" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:Label ID="NoResult" runat="server"></asp:Label>
     <br />
     <br />
 </asp:Content>

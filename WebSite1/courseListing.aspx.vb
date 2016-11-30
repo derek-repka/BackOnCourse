@@ -1,10 +1,6 @@
 ﻿
 Partial Class CourseListing
     Inherits System.Web.UI.Page
-    Protected Sub Page_Init(sender As Object, e As EventArgs)
-        Courses.DataBind()
-
-    End Sub
     Private Sub calanderButton_Click(sender As Object, e As EventArgs) Handles calanderButton.Click
         If (Calendar1.Visible = False) Then
             Calendar1.Visible = True
