@@ -8,7 +8,7 @@
     <p>
         &nbsp;</p>
     <p>
-        Please select a topic, enter in a city name, choose a date from the calendar, then click search to see any available courses.</p>
+        Please select a topic, enter in a city name, or choose a date from the calendar, and click search to see any available courses.</p>
     <p>
         <br />
     </p>
