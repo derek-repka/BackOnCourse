@@ -105,16 +105,12 @@
                     </div>
                 </div>
             </div>
-            <!-- this button literally does nothing I want to delete it -->
-            <!--<ul class="nav nav-pills nav-stacked">
+                <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
                 </li>
             </ul>
-            <br/>-->
-
-            <a href="Confirmation.aspx" class="btn btn-success btn-lg btn-block" role="button">Pay</a>       
-            <asp:Button ID="Button1" runat="server" Text="Button" ControlStyle-CssClass="btn btn-success btn-lg btn-block" href="Confirmation.aspx"/>
-                <br />          
+            <br/>
+                <a href="Confirmation.aspx" class="btn btn-success btn-lg btn-block" role="button">Pay</a>  
             </div>
             </div>
             </div>

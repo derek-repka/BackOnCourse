@@ -25,6 +25,7 @@
             <div class="container">
                 <div class="col-md-9">
                     <div class="panel panel-default">
+                        <div class="panel-heading">Products</div>
                         <!-- gridview for cartProductGridView -->
                         <asp:GridView ID="CartProductGridView"  CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Ecourse and Physical Product in Your Cart" ShowFooter="true">
                                 <Columns>
@@ -41,6 +42,7 @@
             <div class="container">
                 <div class="col-md-9">
                     <div class="panel panel-default">
+                        <div class="panel-heading">Workshops</div>
                         <!-- gridview for cartWorkshopGridview -->
                         <asp:GridView ID="CartWorkshopGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartWorkshopDataSource" EmptyDataText="No Workshop in Your Cart" ShowFooter="true">
                             <Columns>
