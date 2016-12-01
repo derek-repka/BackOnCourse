@@ -12,14 +12,14 @@
 
             <div class="col-xs-9">
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
-              <h5>Topic: <asp:Label ID="Topic" runat="server" ></asp:Label></h5>
-              <h5>Instructor:<asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
-              <h5>Offered by: <asp:Label ID="Firm" runat="server" ></asp:Label></h5>
-              <h5>Location:<asp:Label ID="Location" runat="server" ></asp:Label></h5>
-              <h5>City:<asp:Label ID="City" runat="server" ></asp:Label></h5>
-              <h5>Schedule: <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
+              <h5><strong>Topic: </strong> <asp:Label ID="Topic" runat="server" ></asp:Label></h5>
+              <h5><strong>Instructor:</strong> <asp:Label ID="Instructor" runat="server" ></asp:Label></h5>
+              <h5><strong>Offered by:</strong> <asp:Label ID="Firm" runat="server" ></asp:Label></h5>
+              <h5><strong>Location:</strong> <asp:Label ID="Location" runat="server" ></asp:Label></h5>
+              <h5><strong>City:</strong> <asp:Label ID="City" runat="server" ></asp:Label></h5>
+              <h5><strong>Schedule:</strong> <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
               <hr>
-              <p>Description: <asp:Label ID="Description" runat="server" ></asp:Label></p>
+              <p><strong>Description:</strong> <asp:Label ID="Description" runat="server" ></asp:Label></p>
             </div>
               <!-- We did not use the category information because we combined it with the style table -->
               
@@ -50,7 +50,7 @@
            <div class="panel-footer">
             <div class="text-right">
               <div class="form-inline">
-                <h4>Course Price:<asp:Label ID="Price" runat="server" ></asp:Label></h4>
+                <h4>Course Price: <asp:Label ID="Price" runat="server" ></asp:Label></h4>
                 <div class="form-group" id="WorkShopCartButton">
                     <asp:Button CssClass="btn btn-primary" ID="workshopCartButton" runat="server" Text="Add to Cart" />
                     <br />

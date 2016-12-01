@@ -6,7 +6,16 @@
       <div class="col-md-6">
         <h2>Welcome to Back on Course</h2>
         <p>
-            We provide the services, you provide the content. Feel free to sign up for our services and discover how being a client can benefit your business!
+            We are the <strong>#1</strong> leading site on safety training emergency preparation!
+        </p>
+          <p>
+            We provide information for in-person safety training workshops. </p>
+          <p>
+              Please browse our selection of safety and training online course and products available for purchase.</p>
+          <p>
+            &nbsp;</p>
+          <p>
+              <strong>Sign up with us and discover how being a client can benefit your company! </strong>
         </p>
       </div>
       

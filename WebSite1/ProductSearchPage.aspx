@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <br />
-    Please select a topic and a product type. Once you select a product from the list then the details will appear below.<br />
+    <br />
+    <br />
+    Please browse from our selection below. Once you have made a selection from the list, then the details will appear below. Click select to see more information.<br />
     <br />
     <div><div style="float:left;width:209px">
         <asp:Label ID="TopicLabel" runat="server" Text="Topic: " Height="30px"></asp:Label>

@@ -8,7 +8,11 @@
     <p>
         &nbsp;</p>
     <p>
-        Please select a topic, enter in a city name, or choose a date from the calendar, and click search to see the available workshops.</p>
+        &nbsp;</p>
+    <p>
+        Please select a topic, enter in a city name, or choose a date from the calendar, and click search to view safety training workshops open to registration. </p>
+    <p>
+        Click select to see more information a specific workshop.</p>
     <p>
         <br />
     </p>
