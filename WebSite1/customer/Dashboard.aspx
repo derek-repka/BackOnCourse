@@ -43,9 +43,9 @@
           <div class="col-md-5">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Legislation Updates </div>
-                      <strong>October 1st, 2013</strong><br />
+                      <strong>October 1st, 2016</strong><br />
                     <br />
-                    <strong>The Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2013 (RIDDOR 2013) replaced RIDDOR 1995<br />
+                    <strong>The Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2016 (RIDDOR 2013) replaced RIDDOR 1995<br />
                     The main changes made by these Regulations are:</strong><br />
 &nbsp; • A simplified and shortened list of specified reportable injuries (“major injuries”) to workers sustained as a result of a work-related accident.
                     <br />
