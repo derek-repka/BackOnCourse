@@ -47,7 +47,7 @@
            <div class="panel-footer">
             <div class="text-right">
               <div class="form-inline">
-                <h4>Course Price: <asp:Label ID="Price" runat="server" ></asp:Label></h4>
+                <h4>Course Price: $<asp:Label ID="Price" runat="server" ></asp:Label></h4>
                 <div class="form-group">
                 </div>
                   <p>

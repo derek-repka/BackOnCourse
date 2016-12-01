@@ -97,7 +97,7 @@
             <div class="container">
                     <div class="col-md-9">
                     <div class="text-right">
-                        <h4>Total Price:$ <asp:Label ID="TotalPrice" runat="server" Text="0.00"></asp:Label>
+                        <h4>Total Price: $<asp:Label ID="TotalPrice" runat="server" Text="0.00"></asp:Label>
                         </h4>
                         <asp:SqlDataSource ID="totalPriceDataSource" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" 
