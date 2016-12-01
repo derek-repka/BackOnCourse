@@ -21,7 +21,7 @@
           <div style="float:left;width:221px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
                   style="margin-top: 0" AutoPostBack="True"></asp:TextBox>
         </div>
-          <div style="float:left;width:289px; height: 50px;">Course Date: 
+          <div style="float:left;width:289px; height: 50px;">Workshop Date: 
               <asp:TextBox id="courseDate" runat="server" AutoPostBack="True" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
                   &nbsp;&nbsp; </button>
           </div>
