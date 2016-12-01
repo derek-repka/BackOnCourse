@@ -39,6 +39,25 @@
                     <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
                 </SelectParameters>
             </asp:SqlDataSource>
+            <br />
+          <div class="col-md-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Legislation Updates </div>
+                      <strong>October 1st, 2013</strong><br />
+                    <br />
+                    <strong>The Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2013 (RIDDOR 2013) replaced RIDDOR 1995<br />
+                    The main changes made by these Regulations are:</strong><br />
+&nbsp; • A simplified and shortened list of specified reportable injuries (“major injuries”) to workers sustained as a result of a work-related accident.
+                    <br />
+&nbsp; • A clarified and shortened list of reportable dangerous occurrences (near-miss events).
+                    <br />
+&nbsp; • A simplified and significantly shortened list of reportable ill-health conditions inworkers<br />
+                    <br />
+                    <strong>No changes are being made to:</strong><br />
+&nbsp;• Recording requirements<br />
+&nbsp;• Reports of fatal accidents<br />
+&nbsp;• Reports of accidents involving non-workers including members of the public<br />
+&nbsp;• Reports of accidents which incapacitate workers for more than seven days<br />
         </div>
       </div>
     </div>
