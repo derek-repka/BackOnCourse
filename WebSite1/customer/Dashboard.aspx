@@ -6,7 +6,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="Courses.aspx">Courses</a></li>
+            <li><a href="Courses.aspx">eCourses</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="Settings.aspx">Settings</a></li>
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-5">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Recently Purchased Courses </div>
+                    <div class="panel-heading">Recently Purchased eCourses </div>
                     <asp:GridView ID="recentECourseView" CssClass="table table-striped table-bordered table-hover" ShowHeader="false" runat="server" DataSourceID="ecourseDataSource" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="Subject" HeaderText="Subject" SortExpression="Subject" />

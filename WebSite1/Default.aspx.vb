@@ -14,7 +14,10 @@ Partial Class _Default
         registrationDataSource.InsertParameters("lastName").DefaultValue = lastName
         registrationDataSource.InsertParameters("firstName").DefaultValue = firstName
         If registrationDataSource.Insert() > 0 Then
-            Response.Redirect("About.aspx")
+            Response.Redirect("Account/Register.aspx")
         End If
+    End Sub
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+
     End Sub
 End Class
