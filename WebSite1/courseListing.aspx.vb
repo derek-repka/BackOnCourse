@@ -1,9 +1,9 @@
 ﻿
 Partial Class CourseListing
     Inherits System.Web.UI.Page
+
     Private Sub Calendar1_SelectionChanged(sender As Object, e As EventArgs) Handles Calendar1.SelectionChanged
         courseDate.Text = Calendar1.SelectedDate.ToShortDateString()
-        Calendar1.Visible = False
     End Sub
 
     Private Sub Courses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Courses.SelectedIndexChanged

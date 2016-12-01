@@ -13,7 +13,7 @@
         <br />
     </p>
       <div><div style="float:left;width:209px">
-          Course Topic:
+          Course Topic: 
        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" 
               DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
        </asp:DropDownList>
@@ -26,10 +26,13 @@
           </div>
           <div style="float:left;width:243px"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
+          <br />
       </div>
     <p>
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
+    <p>
+        </p>
     <p>
         <asp:GridView ID="Courses" CssClass="table table-striped table-bordered table-hover" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" DataKeyNames="Workshop Number">
                 <Columns>
@@ -52,26 +55,29 @@
                 <SelectParameters>
                     <asp:ControlParameter ControlID="topicslist" Name="topic" PropertyName="SelectedValue" />
                     <asp:ControlParameter ControlID="cityBox" Name="city" PropertyName="Text" />
-                    <asp:ControlParameter ControlID="Calendar1" Name="date" PropertyName="SelectedDate" />
+                    <asp:ControlParameter ControlID="courseDate" Name="date" PropertyName="Text" />
                 </SelectParameters>
         </asp:SqlDataSource>
-  
-
-    <p>
-        &nbsp;</p>
-
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
+      
     <!-- Modal content-->
     <div class="modal-content">
+        
       <div class="modal-body">
-        <p>.</p>
+        <p>
+            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
+            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+            <OtherMonthDayStyle ForeColor="#999999" />
+            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+            <TodayDayStyle BackColor="#CCCCCC" /></asp:Calendar>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="test">Close</button>
       </div>
     </div>
 
