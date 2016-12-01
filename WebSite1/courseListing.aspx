@@ -12,25 +12,28 @@
     <p>
         <br />
     </p>
-      <div><div style="float:left;width:209px">
+      <div><div style="float:left;width:209px; height: 50px;">
           Course Topic: 
        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" 
               DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
        </asp:DropDownList>
           </div>
-          <div style="float:left;width:221px"> City: <asp:TextBox ID="cityBox" runat="server" 
+          <div style="float:left;width:221px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
                   style="margin-top: 0" AutoPostBack="True"></asp:TextBox>
         </div>
-          <div style="float:left;width:289px; height: 22px;">Course Date: 
-              <asp:TextBox id="courseDate" runat="server" AutoPostBack="True"></asp:TextBox><button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal">...</button>
+          <div style="float:left;width:289px; height: 50px;">Course Date: 
+              <asp:TextBox id="courseDate" runat="server" AutoPostBack="True" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
+                  &nbsp;&nbsp; </button>
           </div>
-          <div style="float:left;width:243px"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
+          <div style="float:left;width:243px; height: 50px;"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
           <br />
       </div>
     <p>
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
+    <p>
+        </p>
     <p>
         </p>
     <p>
