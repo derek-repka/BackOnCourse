@@ -2,10 +2,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container" style="margin-top: 20px">
+    <div class="container" style="margin-top: 55px">
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
-          <div class="panel-heading"><h3 class="panel-title">Course Information</h3></div>
+          <div class="panel-heading"><h3 class="panel-title">eCourse Information</h3></div>
           <div class="panel-body">
             <div class="col-xs-3">
               &nbsp;<img alt="" src="images/chalk_board.png" style="width: 128px; height: 128px" /></div>

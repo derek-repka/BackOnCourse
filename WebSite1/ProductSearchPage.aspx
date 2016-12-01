@@ -4,7 +4,9 @@
     <br />
     <br />
     <br />
-    Please browse from our selection below. Once you have made a selection from the list, then the details will appear below. Click select to see more information.<br />
+    Please browse from our selection below. Once you have made a selection from the list, click search to see the options below.
+    <br />
+    Click select to see more information on an option.<br />
     <br />
     <div><div style="float:left;width:209px">
         <asp:Label ID="TopicLabel" runat="server" Text="Topic: " Height="30px"></asp:Label>

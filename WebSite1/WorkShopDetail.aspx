@@ -2,13 +2,13 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container" style="margin-top: 20px">
+    <div class="container" style="margin-top: 55px">
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Workshop Information</h3></div>
           <div class="panel-body">
             <div class="col-xs-3">
-              &nbsp;<img alt="" class="modal-sm" src="images/Workshop.png" style="height: 140px; width: 205px" /></div>
+              &nbsp;<img alt="" class="modal-sm" src="images/Workshop.png" style="height: 100px; width: 140px" /></div>
 
             <div class="col-xs-9">
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
