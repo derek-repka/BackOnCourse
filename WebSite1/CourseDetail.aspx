@@ -8,8 +8,7 @@
           <div class="panel-heading"><h3 class="panel-title">Course Information</h3></div>
           <div class="panel-body">
             <div class="col-xs-3">
-              <img src="assets/vince.jpg" alt="140x140" class="img-thumbnail">
-            </div>
+              &nbsp;<img alt="" src="images/chalk_board.png" style="width: 128px; height: 128px" /></div>
 
             <div class="col-xs-9">
               <h2 style="margin-top: 0;">  <asp:label ID="CourseName" runat="server" ></asp:label> </h2>
