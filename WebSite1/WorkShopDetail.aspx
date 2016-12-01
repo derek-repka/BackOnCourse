@@ -8,8 +8,7 @@
           <div class="panel-heading"><h3 class="panel-title">Workshop Information</h3></div>
           <div class="panel-body">
             <div class="col-xs-3">
-              <img src="assets/vince.jpg" alt="140x140" class="img-thumbnail">
-            </div>
+              &nbsp;<img alt="" class="modal-sm" src="images/Workshop.png" style="height: 140px; width: 205px" /></div>
 
             <div class="col-xs-9">
               <h2 style="margin-top: 0;">  <asp:label ID="PlaceHolder" runat="server" ></asp:label> </h2>
