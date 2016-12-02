@@ -46,11 +46,11 @@
                         <!-- gridview for cartWorkshopGridview -->
                         <asp:GridView ID="CartWorkshopGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartWorkshopDataSource" EmptyDataText="No Workshop in Your Cart" ShowFooter="True">
                             <Columns>
-                                <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" FooterText="Subtotal" />
-                                <asp:BoundField DataField="location" HeaderText="Location" SortExpression="location" />
-                                <asp:BoundField DataField="topicCode" HeaderText="TopicCode" SortExpression="topicCode" />
-                                <asp:BoundField DataField="dateTime" HeaderText="DateTime" SortExpression="dateTime" />
-                                <asp:BoundField DataField="workshopPrice" HeaderText="Price" SortExpression="workshopPrice" />
+                                <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" FooterText="Subtotal" HeaderStyle-Width="20%"/>
+                                <asp:BoundField DataField="location" HeaderText="Location" SortExpression="location" HeaderStyle-Width="25%"/>
+                                <asp:BoundField DataField="topicCode" HeaderText="TopicCode" SortExpression="topicCode" HeaderStyle-Width="10%"/>
+                                <asp:BoundField DataField="dateTime" HeaderText="DateTime" SortExpression="dateTime" HeaderStyle-Width="25%"/>
+                                <asp:BoundField DataField="workshopPrice" HeaderText="Price" SortExpression="workshopPrice" HeaderStyle-Width="10%"/>
                                 <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  ButtonType="Button" HeaderStyle-Width="10%">
                                 </asp:CommandField>
                             </Columns>
@@ -66,9 +66,9 @@
                         <!-- gridview for cartProductGridView -->
                         <asp:GridView ID="CarteCourseGridView"  CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="carteCourseDataSource" EmptyDataText="No eCourse in Your Cart" ShowFooter="True">
                                 <Columns>
-                                    <asp:BoundField DataField="productName" HeaderText="ProductName" SortExpression="productName"  FooterText="Subtotal"/>
-                                    <asp:BoundField DataField="styleDescription" HeaderText="Description" SortExpression="styleDescription" />
-                                    <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" />
+                                    <asp:BoundField DataField="productName" HeaderText="ProductName" SortExpression="productName"  FooterText="Subtotal" HeaderStyle-Width="50%"/>
+                                    <asp:BoundField DataField="styleDescription" HeaderText="Description" SortExpression="styleDescription" HeaderStyle-Width="30%"/>
+                                    <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" HeaderStyle-Width="10%"/>
                                     <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  ButtonType="Button" HeaderStyle-Width="10%">
                                     </asp:CommandField>
                                 </Columns>
@@ -84,12 +84,12 @@
                         <!-- gridview for cartProductGridView -->
                         <asp:GridView ID="CartProductGridView"  CssClass="table table-striped table-bordered table-hover" OnRowCommand="CartProductGridView_RowCommand" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Product in Your Cart" ShowFooter="True">
                                 <Columns>
-                                    <asp:BoundField DataField="productName" HeaderText="ProductName" SortExpression="productName"  FooterText="Subtotal"/>
-                                    <asp:BoundField DataField="styleDescription" HeaderText="Description" SortExpression="styleDescription" />
-                                    <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" />
-                                    <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
-                                    <asp:ButtonField CommandName="increaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="+"/>
-                                    <asp:ButtonField CommandName="decreaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="-"/>
+                                    <asp:BoundField DataField="productName" HeaderText="ProductName" SortExpression="productName"  FooterText="Subtotal" HeaderStyle-Width="35%"/>
+                                    <asp:BoundField DataField="styleDescription" HeaderText="Description" SortExpression="styleDescription" HeaderStyle-Width="25%"/>
+                                    <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" HeaderStyle-Width="12%"/>
+                                    <asp:ButtonField CommandName="decreaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="-" HeaderStyle-Width="5%"/>
+                                    <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" HeaderStyle-Width="8%"/>
+                                    <asp:ButtonField CommandName="increaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="+" HeaderStyle-Width="5%"/>
                                     <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  ButtonType="Button" HeaderStyle-Width="10%">
                                     </asp:CommandField>
                                 </Columns>
