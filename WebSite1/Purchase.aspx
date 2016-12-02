@@ -91,7 +91,10 @@
                     </div>
                 </div>
             </div>
-            
+            <style>
+                .checkbox.pull-right { margin: 0; }
+                .pl-ziro { padding-left: 0px; }
+            </style>
             <!-- start of the right panel -->
             <div class="col-md-4">
                 <br />        
@@ -107,14 +110,11 @@
                                 <div class="form-group">
                                     <label for="cardNumber">
                                         CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
-                                            required autofocus />
-                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                    </div>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                                        required autofocus />
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-7 col-md-7">
+                                    <div class="col-xs-7 col-md-6">
                                         <div class="form-group">
                                             <label for="expityMonth">
                                                 EXPIRY DATE</label>
