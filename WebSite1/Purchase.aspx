@@ -149,7 +149,11 @@
                             </SelectParameters>
                         </asp:SqlDataSource>
                         <br/>
-                        <a ID="payButton" runat="server" href="#" onserverclick="Pay" class="btn btn-success btn-lg btn-block" role="button">Pay</a>  
+                        <a ID="payButton" runat="server" href="#" onserverclick="Pay" class="btn btn-success btn-lg btn-block" role="button">Pay</a>    
+                        <br />                      
+                        <a ID="backButton" runat="server" href="/Cart.aspx" class="btn btn-success btn-lg btn-block" role="button">Change your order</a>
+                        <br />
+                                                
                 </div>
             </div>
         </div>
