@@ -16,16 +16,16 @@
     <p>
         <br />
     </p>
-      <div><div style="float:left;width:209px; height: 50px;">
-          Course Topic: 
+      <div><div style="float:left;width:185px; height: 50px;">
+          Topic: 
        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" 
               DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
        </asp:DropDownList>
           </div>
-          <div style="float:left;width:221px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
+          <div style="float:left;width:225px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
                   style="margin-top: 0" AutoPostBack="True"></asp:TextBox>
         </div>
-          <div style="float:left;width:289px; height: 50px;">Workshop Date: 
+          <div style="float:left;width:289px; height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: 
               <asp:TextBox id="courseDate" runat="server" AutoPostBack="True" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
                   &nbsp;&nbsp; </button>
           </div>
