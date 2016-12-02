@@ -22,14 +22,14 @@
             <div class="col-md-5">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Recently Purchased eCourses </div>
-                    <asp:GridView ID="recentECourseView" CssClass="table table-striped table-bordered table-hover" ShowHeader="false" runat="server" DataSourceID="ecourseDataSource" AutoGenerateColumns="False">
+                    <asp:GridView ID="recentECourseView" CssClass="table table-striped table-bordered table-hover" ShowHeader="False" runat="server" DataSourceID="ecourseDataSource" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="Subject" HeaderText="Subject" SortExpression="Subject" />
                         </Columns>
                     </asp:GridView>
                 </div>
             </div>
-            <asp:SqlDataSource ID="ecourseDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT TOP (5) platformEcourse.ecourseSubject AS Subject FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID INNER JOIN platformEcourse ON platformProduct.productID = platformEcourse.productID WHERE (platformUser.userID = @userID) AND (platformOrder.orderStatusID = 3) ORDER BY platformOrder.orderDate DESC">
+            <asp:SqlDataSource ID="ecourseDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT TOP (5) platformProduct.productName AS Subject FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID WHERE (platformUser.userID = @userID) AND (platformOrder.orderStatusID = 3) AND (platformProduct.categoryID = 2) ORDER BY platformOrder.orderDate DESC">
                 <SelectParameters>
                     <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
                 </SelectParameters>

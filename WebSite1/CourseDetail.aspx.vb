@@ -7,16 +7,17 @@ Partial Class CourseDetail
         Dim dv As DataView = CType(courseSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
         If dv.Count > 0 Then
             CourseName.Text = dv(0)(0)
-            TopicHolder.Text = dv(0)(5)
             Firm.Text = dv(0)(1)
             Instructor.Text = dv(0)(3) + " " + dv(0)(2)
-            If DBNull.Value.Equals(dv(0)(7)) Then
+            TopicHolder.Text = dv(0)(4)
+            Price.Text = dv(0)(5)
+            If DBNull.Value.Equals(dv(0)(6)) Then
                 Description.Text = ""
             Else
-                Description.Text = dv(0)(7)
+                Description.Text = dv(0)(6)
             End If
-            Status.Text = dv(0)(8)
-            Price.Text = dv(0)(6)
+            Status.Text = dv(0)(7)
+
             If Status.Text = "Y" Then
                 Status.Text = "No"
                 CartCourseButton.Text = "Not available"

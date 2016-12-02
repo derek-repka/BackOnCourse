@@ -25,7 +25,7 @@
 <asp:SqlDataSource ID="TopicNames" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode FROM platformTopic"></asp:SqlDataSource>
 <asp:SqlDataSource ID="ProductType" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT styleDescription AS 'Product Type' FROM platformStyle WHERE (NOT (styleDescription = N'OnlineCourse'))"></asp:SqlDataSource>
 <br />
-<asp:GridView ID="ProductDescriptionGrid" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="sqlProductListing" AllowSorting="True" DataKeyNames="productID" Visible="False" Width="648px" EmptyDataText="No results. Please change your search parameters.">
+<asp:GridView ID="ProductDescriptionGrid" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="sqlProductListing" AllowSorting="True" DataKeyNames="productID" Visible="False" Width="650px" EmptyDataText="No results. Please change your search parameters.">
     <Columns>
         <asp:CommandField ShowSelectButton="True" />
         <asp:BoundField DataField="Product" HeaderText="Product" SortExpression="Product" />
@@ -43,18 +43,18 @@
     </SelectParameters>
 </asp:SqlDataSource>
     <br />
-    <asp:GridView ID="eCourseDescriptionGrid" CssClass="table table-striped table-bordered table-hover" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="sqlECourseListing" Visible="False" Width="644px" DataKeyNames="ecourseID" EmptyDataText="No results. Please change your search parameters.">
+    <asp:GridView ID="eCourseDescriptionGrid" CssClass="table table-striped table-bordered table-hover" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="sqlECourseListing" Visible="False" Width="650px" DataKeyNames="eCourseID" EmptyDataText="No results. Please change your search parameters.">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
             <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
             <asp:BoundField DataField="Hosting Firm" HeaderText="Hosting Firm" SortExpression="Hosting Firm" />
-            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
             <asp:BoundField DataField="Instructor" HeaderText="Instructor" ReadOnly="True" SortExpression="Instructor" />
-            <asp:BoundField DataField="ecourseID" HeaderText="ecourseID" SortExpression="ecourseID" InsertVisible="False" ReadOnly="True" />
+            <asp:BoundField DataField="eCourseID" HeaderText="eCourseID" SortExpression="eCourseID" InsertVisible="False" ReadOnly="True" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="sqlECourseListing" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformProduct.productName AS Name, platformTopic.topicCode AS Topic, platformFirm.firmName AS [Hosting Firm], platformEcourse.price, platformInstructor.firstName + ' ' + platformInstructor.lastName AS Instructor, platformEcourse.ecourseID FROM platformEcourse INNER JOIN platformProduct ON platformEcourse.productID = platformProduct.productID INNER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID INNER JOIN platformCategory ON platformProduct.categoryID = platformCategory.categoryID INNER JOIN platformFirm ON platformEcourse.firmID = platformFirm.firmID AND platformProduct.firmID = platformFirm.firmID INNER JOIN platformInstructor ON platformEcourse.instructorID = platformInstructor.instructorID WHERE (platformTopic.topicCode = @topic) AND (platformCategory.description = N'OnlineCourse')">
+    <asp:SqlDataSource ID="sqlECourseListing" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformProduct.productName AS Name, platformTopic.topicCode AS Topic, platformFirm.firmName AS [Hosting Firm], platformProduct.price AS Price, platformInstructor.firstName + ' ' + platformInstructor.lastName AS Instructor, platformProduct.productID AS eCourseID FROM platformProduct INNER JOIN platformTopic ON platformProduct.topicID = platformTopic.topicID INNER JOIN platformCategory ON platformProduct.categoryID = platformCategory.categoryID INNER JOIN platformFirm ON platformProduct.firmID = platformFirm.firmID INNER JOIN platformInstructor ON platformProduct.instructorID = platformInstructor.instructorID WHERE (platformTopic.topicCode = @topic) AND (platformCategory.description = N'OnlineCourse')">
         <SelectParameters>
             <asp:ControlParameter ControlID="TopicList" Name="topic" PropertyName="SelectedValue" />
         </SelectParameters>
