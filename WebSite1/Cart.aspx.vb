@@ -21,6 +21,9 @@ Partial Class Cart
             quantity -= 1
         End If
         row.Cells(3).Text = quantity
+        cartProductDataSource.UpdateParameters("orderLineId").DefaultValue = ordeLineId
+        cartProductDataSource.UpdateParameters("quantity").DefaultValue = quantity
+        cartProductDataSource.Update()
     End Sub
 
     Private Subtotal_Workshop As Decimal = 0.0
