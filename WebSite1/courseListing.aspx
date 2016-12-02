@@ -16,18 +16,22 @@
     <p>
         <br />
     </p>
-      <div><div style="float:left;width:185px; height: 50px;">
-          Topic: 
+      <div><div style="float:left;width:209px; height: 50px;">
+          Course Topic: 
        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" 
-              DataTextField="Topic" DataValueField="Topic" AutoPostBack="True">
+              DataTextField="Topic" DataValueField="Topic">
        </asp:DropDownList>
           </div>
-          <div style="float:left;width:225px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
-                  style="margin-top: 0" AutoPostBack="True"></asp:TextBox>
+          <div style="float:left;width:221px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
+                  style="margin-top: 0"></asp:TextBox>
+              <br />
+              <asp:CompareValidator ID="cityValidator" runat="server" ControlToValidate="cityBox" ErrorMessage="Please enter a valid city name." Operator="DataTypeCheck"></asp:CompareValidator>
         </div>
-          <div style="float:left;width:289px; height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: 
-              <asp:TextBox id="courseDate" runat="server" AutoPostBack="True" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
+          <div style="float:left;width:333px; height: 50px;">Workshop Date: 
+              <asp:TextBox id="courseDate" runat="server" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
                   &nbsp;&nbsp; </button>
+              <br />
+              <asp:CompareValidator ID="dateValidator" runat="server" ControlToValidate="courseDate" ErrorMessage="Please enter a valid date in the form 'YYYY-MM-DD'." Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
           </div>
           <div style="float:left;width:243px; height: 50px;"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
@@ -37,11 +41,11 @@
         <asp:SqlDataSource ID="sqltopics" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT topicCode AS Topic FROM platformTopic"></asp:SqlDataSource>
     </p>
     <p>
-        </p>
+        &nbsp;</p>
     <p>
         </p>
     <p>
-        <asp:GridView ID="Courses" CssClass="table table-striped table-bordered table-hover" runat="server" Width="811px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" DataKeyNames="Workshop Number">
+        <asp:GridView ID="Courses" CssClass="table table-striped table-bordered table-hover" runat="server" Width="845px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" DataKeyNames="Workshop Number" EmptyDataText="No results. Please change your search parameters.">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
@@ -65,6 +69,8 @@
                     <asp:ControlParameter ControlID="courseDate" Name="date" PropertyName="Text" />
                 </SelectParameters>
         </asp:SqlDataSource>
+
+    <br />
 
     <br />
     <span style="color: rgb(102, 106, 115); font-family: &quot;Benton Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Roboto, Arial, sans-serif; font-size: x-large; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: bold; letter-spacing: 0.5px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">Attendance Guidelines </span>
