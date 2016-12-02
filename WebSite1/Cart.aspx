@@ -78,12 +78,14 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Products</div>
                         <!-- gridview for cartProductGridView -->
-                        <asp:GridView ID="CartProductGridView"  CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Product in Your Cart" ShowFooter="True">
+                        <asp:GridView ID="CartProductGridView"  CssClass="table table-striped table-bordered table-hover" OnRowCommand="CartProductGridView_RowCommand" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Product in Your Cart" ShowFooter="True">
                                 <Columns>
                                     <asp:BoundField DataField="productName" HeaderText="ProductName" SortExpression="productName"  FooterText="Subtotal"/>
                                     <asp:BoundField DataField="styleDescription" HeaderText="Description" SortExpression="styleDescription" />
                                     <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" />
                                     <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
+                                    <asp:ButtonField CommandName="increaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="-"/>
+                                    <asp:ButtonField CommandName="decreaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="+"/>
                                     <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  ButtonType="Button" HeaderStyle-Width="10%">
                                     </asp:CommandField>
                                 </Columns>

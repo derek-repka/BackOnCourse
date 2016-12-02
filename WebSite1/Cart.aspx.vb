@@ -7,6 +7,13 @@ Partial Class CartPage
         Dim dv As DataView = CType(totalPriceDataSource.Select(DataSourceSelectArguments.Empty), DataView)
         TotalPrice.Text = dv(0)(0)
     End Sub
+    Protected Sub CartProductGridView_RowCommand(sender As Object, e As GridViewCommandEventArgs)
+        If e.CommandName.Equals("increaseQuantity") Then
+
+        ElseIf e.CommandName.Equals("decreaseQuantity") Then
+
+        End If
+    End Sub
 
     Private Subtotal_Workshop As Decimal = 0.0
     Protected Sub CartWorkshopGridView_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles CartWorkshopGridView.RowDataBound
@@ -40,7 +47,7 @@ Partial Class CartPage
             Subtotal_Product += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "productPrice")) * Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "quantity"))
         ElseIf e.Row.RowType = DataControlRowType.Footer Then
             ' If row type is footer, show calculated total value
-            e.Row.Cells(4).Text = String.Format("{0:c}", Subtotal_Product)
+            e.Row.Cells(6).Text = String.Format("{0:c}", Subtotal_Product)
         End If
     End Sub
 End Class
