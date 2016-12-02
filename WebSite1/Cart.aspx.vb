@@ -1,7 +1,7 @@
 ﻿
 Imports System.Data
 
-Partial Class CartPage
+Partial Class Cart
     Inherits System.Web.UI.Page
     Protected Sub Page_LoadComplete(sender As Object, e As EventArgs)
         Dim dv As DataView = CType(totalPriceDataSource.Select(DataSourceSelectArguments.Empty), DataView)
@@ -11,11 +11,15 @@ Partial Class CartPage
         TotalPrice.Text = dv(0)(0)
     End Sub
     Protected Sub CartProductGridView_RowCommand(sender As Object, e As GridViewCommandEventArgs)
+        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        Dim row As GridViewRow = CartProductGridView.Rows(index)
+        Dim quantity As Integer = Convert.ToInt32(row.Cells(3).Text)
         If e.CommandName.Equals("increaseQuantity") Then
-
-        ElseIf e.CommandName.Equals("decreaseQuantity") Then
-
+            quantity += 1
+        ElseIf e.CommandName.Equals("decreaseQuantity") And quantity > 1 Then
+            quantity -= 1
         End If
+        row.Cells(3).Text = quantity
     End Sub
 
     Private Subtotal_Workshop As Decimal = 0.0

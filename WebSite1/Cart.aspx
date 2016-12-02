@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Cart.aspx.vb" Inherits="CartPage" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Cart.aspx.vb" Inherits="Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container" style="margin-top: 20px">
@@ -26,13 +26,17 @@
             </asp:SqlDataSource>
             
             <!-- start of cart Product Data Source -->
-            <asp:SqlDataSource ID="cartProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformOrderLine.quantity, platformProduct.productName, platformProduct.price AS productPrice, platformStyle.styleDescription, platformOrderLine.orderLineID FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID WHERE (platformOrder.orderStatusID = 1) AND (platformUser.userID = @userID) AND (platformProduct.styleID &lt;&gt; 2)" DeleteCommand="DELETE FROM platformOrderLine WHERE (orderLineID = @orderLineID)">
+            <asp:SqlDataSource ID="cartProductDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT platformOrderLine.quantity, platformProduct.productName, platformProduct.price AS productPrice, platformStyle.styleDescription, platformOrderLine.orderLineID FROM platformUser INNER JOIN platformOrder ON platformUser.userID = platformOrder.userID INNER JOIN platformOrderLine ON platformOrder.orderID = platformOrderLine.orderID INNER JOIN platformProduct ON platformOrderLine.productID = platformProduct.productID LEFT OUTER JOIN platformStyle ON platformProduct.styleID = platformStyle.styleID WHERE (platformOrder.orderStatusID = 1) AND (platformUser.userID = @userID) AND (platformProduct.styleID = 2)" DeleteCommand="DELETE FROM [platformOrderLine] WHERE [orderLineID] = @orderLineID" UpdateCommand="UPDATE platformOrderLine SET quantity = @quantity WHERE (orderLineID = @orderLineID)">
                 <DeleteParameters>
-                    <asp:Parameter Name="orderLineID" />
+                    <asp:Parameter Name="orderLineID" Type="Int32" />
                 </DeleteParameters>
                 <SelectParameters>
                     <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
                 </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="quantity" Type="Int32" />
+                    <asp:Parameter Name="orderLineID" Type="Int32" />
+                </UpdateParameters>
             </asp:SqlDataSource>
                 
             <div class="container">
@@ -84,8 +88,8 @@
                                     <asp:BoundField DataField="styleDescription" HeaderText="Description" SortExpression="styleDescription" />
                                     <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" />
                                     <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
-                                    <asp:ButtonField CommandName="increaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="-"/>
-                                    <asp:ButtonField CommandName="decreaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="+"/>
+                                    <asp:ButtonField CommandName="increaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="+"/>
+                                    <asp:ButtonField CommandName="decreaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="-"/>
                                     <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"  ButtonType="Button" HeaderStyle-Width="10%">
                                     </asp:CommandField>
                                 </Columns>
