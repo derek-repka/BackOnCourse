@@ -106,7 +106,22 @@
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <div role="form"> 
+                            <div role="form">
+                                 
+                                <div class="form-group">
+                                    <label for="BAddress">
+                                        BILLING ADDRESS</label>
+                                    <input type="text" class="form-control" id="BAddress" placeholder="Billing Address"
+                                        required autofocus />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="SAddress">
+                                        SHIPPING ADDRESS</label>
+                                    <input type="text" class="form-control" id="SAddress" placeholder="Shipping Address"
+                                        required autofocus />
+                                </div>
+
                                 <div class="form-group">
                                     <label for="cardNumber">
                                         CARD NUMBER</label>
