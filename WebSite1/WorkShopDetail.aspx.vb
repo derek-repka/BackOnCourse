@@ -18,7 +18,7 @@ Partial Class WorkShopDetail
             Schedule.Text = dv(0)(3)
             Price.Text = dv(0)(4)
         End If
-        If Schedule.Text >= curDate Then
+        If Schedule.Text <= curDate Then
             workshopCartButton.Enabled = False
             workshopCartButton.Text = "Not available"
         End If

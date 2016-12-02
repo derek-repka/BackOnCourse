@@ -32,6 +32,7 @@
                   &nbsp;&nbsp; </button>
               <br />
               <asp:CompareValidator ID="dateValidator" runat="server" ControlToValidate="courseDate" ErrorMessage="Please enter a valid date in the form 'YYYY-MM-DD'." Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
+              <br />
           </div>
           <div style="float:left;width:243px; height: 50px;"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
