@@ -19,7 +19,7 @@
               <h5><strong>City:</strong> <asp:Label ID="City" runat="server" ></asp:Label></h5>
               <h5><strong>Schedule:</strong> <asp:Label ID="Schedule" runat="server" ></asp:Label></h5>
               <hr>
-              <p><strong>Description:</strong> <asp:Label ID="Description" runat="server" ></asp:Label></p>
+              <p><strong>Description:</strong> Valid for 2 years.</p>
             </div>
               <!-- We did not use the category information because we combined it with the style table -->
               
