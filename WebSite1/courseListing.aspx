@@ -24,13 +24,14 @@
           </div>
           <div style="float:left;width:221px; height: 50px;"> City: <asp:TextBox ID="cityBox" runat="server" 
                   style="margin-top: 0"></asp:TextBox>
-              <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="cityBox" ErrorMessage="Please enter a valid city name." Operator="DataTypeCheck"></asp:CompareValidator>
+              <br />
+              <asp:CompareValidator ID="cityValidator" runat="server" ControlToValidate="cityBox" ErrorMessage="Please enter a valid city name." Operator="DataTypeCheck"></asp:CompareValidator>
         </div>
           <div style="float:left;width:333px; height: 50px;">Workshop Date: 
               <asp:TextBox id="courseDate" runat="server" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
                   &nbsp;&nbsp; </button>
               <br />
-              <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="courseDate" ErrorMessage="Please enter a valid date in the form 'YYYY-MM-DD'." Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
+              <asp:CompareValidator ID="dateValidator" runat="server" ControlToValidate="courseDate" ErrorMessage="Please enter a valid date in the form 'YYYY-MM-DD'." Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
           </div>
           <div style="float:left;width:243px; height: 50px;"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
         </div>
