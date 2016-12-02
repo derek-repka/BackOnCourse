@@ -2,7 +2,10 @@
 Partial Class _Default
     Inherits Page
 
-    Protected Sub Register(sender As Object, e As EventArgs)
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+    End Sub
+    Protected Sub signUpButton_Click(sender As Object, e As EventArgs) Handles signUpButton.Click
         Dim company As String = txtRegCompany.Value
         Dim email As String = txtRegEmail.Value
         Dim password As String = txtRegPassword.Value
@@ -16,8 +19,5 @@ Partial Class _Default
         If registrationDataSource.Insert() > 0 Then
             Response.Redirect("Account/Register.aspx")
         End If
-    End Sub
-    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-
     End Sub
 End Class
