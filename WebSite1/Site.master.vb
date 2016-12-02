@@ -7,8 +7,9 @@ Imports System.Web.UI
 Imports System.Web.UI.WebControls
 Imports System.Data.SqlClient
 Imports System.Data
+Imports System.Security.Cryptography
 
-Public Partial Class SiteMaster
+Partial Public Class SiteMaster
     Inherits MasterPage
     Private Const AntiXsrfTokenKey As String = "__AntiXsrfToken"
     Private Const AntiXsrfUserNameKey As String = "__AntiXsrfUserName"
@@ -66,7 +67,7 @@ Public Partial Class SiteMaster
         Dim password As String = txtPassword.Value
         If Not email.Equals("") And Not password.Equals("") Then
             loginDataSource.SelectParameters("email").DefaultValue = email
-            loginDataSource.SelectParameters("password").DefaultValue = password
+            loginDataSource.SelectParameters("password").DefaultValue = Hash(password)
 
             Dim dv As DataView = CType(loginDataSource.Select(DataSourceSelectArguments.Empty), DataView)
             If dv.Count > 0 Then
@@ -84,4 +85,13 @@ Public Partial Class SiteMaster
         Session.Abandon()
         Response.Redirect("/Default.aspx")
     End Sub
+
+    Public Function Hash(password As String) As String
+        Dim salt As String = "MIS418"
+        Dim convertedToBytes As Byte() = Encoding.UTF8.GetBytes(password & salt)
+        Dim hashType As HashAlgorithm = New SHA512Managed()
+        Dim hashBytes As Byte() = hashType.ComputeHash(convertedToBytes)
+        Dim hashedResult As String = Convert.ToBase64String(hashBytes)
+        Return hashedResult
+    End Function
 End Class

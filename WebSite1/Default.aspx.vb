@@ -10,7 +10,7 @@ Partial Class _Default
         Dim firstName As String = txtRegFirstName.Value
         registrationDataSource.InsertParameters("companyName").DefaultValue = company
         registrationDataSource.InsertParameters("email").DefaultValue = email
-        registrationDataSource.InsertParameters("password").DefaultValue = password
+        registrationDataSource.InsertParameters("password").DefaultValue = TryCast(Me.Master, SiteMaster).Hash(password)
         registrationDataSource.InsertParameters("lastName").DefaultValue = lastName
         registrationDataSource.InsertParameters("firstName").DefaultValue = firstName
         If registrationDataSource.Insert() > 0 Then
