@@ -17,7 +17,7 @@
         <br />
     </p>
       <div><div style="float:left;width:209px; height: 50px;">
-          Course Topic: 
+          &nbsp;Topic: 
        <asp:DropDownList ID="topicslist" runat="server" DataSourceID="sqltopics" 
               DataTextField="Topic" DataValueField="Topic">
        </asp:DropDownList>
@@ -27,7 +27,7 @@
               <br />
               <asp:CompareValidator ID="cityValidator" runat="server" ControlToValidate="cityBox" ErrorMessage="Please enter a valid city name." Operator="DataTypeCheck"></asp:CompareValidator>
         </div>
-          <div style="float:left;width:333px; height: 50px;">Workshop Date: 
+          <div style="float:left;width:333px; height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: 
               <asp:TextBox id="courseDate" runat="server" Width="120px"></asp:TextBox>&nbsp; <button type="button" class="btn btn-info bth-lg" data-toggle="modal" data-target="#myModal" style="background-image: url('images/calendar.png');">
                   &nbsp;&nbsp; </button>
               <br />
