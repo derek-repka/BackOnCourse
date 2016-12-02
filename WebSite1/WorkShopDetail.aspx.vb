@@ -6,7 +6,7 @@ Partial Class WorkShopDetail
 
     Protected Sub Page_Init(sender As Object, e As EventArgs)
         Dim id As Integer = Request.QueryString("id")
-        Dim curDate As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+        Dim curDate As DateTime = DateTime.Now
         workshopSqlDataSource.SelectParameters("workshopID").DefaultValue = id
         Dim dv As DataView = CType(workshopSqlDataSource.Select(DataSourceSelectArguments.Empty), DataView)
         If dv.Count > 0 Then
@@ -18,7 +18,7 @@ Partial Class WorkShopDetail
             Schedule.Text = dv(0)(3)
             Price.Text = dv(0)(4)
         End If
-        If Schedule.Text <= curDate Then
+        If DateTime.Compare(Convert.ToDateTime(Schedule.Text), curDate) < 0 Then
             workshopCartButton.Enabled = False
             workshopCartButton.Text = "Not available"
         End If

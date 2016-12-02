@@ -66,7 +66,31 @@
                         </div>
                         <button type="submit" class="btn btn-success" runat="server" onserverclick="Validate_User">Sign in</button>
                     </div>
-                    <% Else %>
+                    <% ElseIf Session("type") = "admin" %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/Admin/Dashboard.aspx"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=Session("firstName") %><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a href="#">Settings</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Default.aspx" runat="server" onserverclick="Logout">Log out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                     <% Elseif Session("type") = "contentmanager" %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/ContentManager/Dashboard.aspx"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=Session("firstName") %><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a href="#">Settings</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Default.aspx" runat="server" onserverclick="Logout">Log out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <%Else%>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/Cart.aspx"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
                         <li><a href="/customer/Dashboard.aspx"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>

@@ -71,11 +71,17 @@ Public Partial Class SiteMaster
             Dim dv As DataView = CType(loginDataSource.Select(DataSourceSelectArguments.Empty), DataView)
             If dv.Count > 0 Then
                 Session("id") = dv(0)(0)
-                Session("firstName") = dv(0)(4)
-                Session("lastName") = dv(0)(5)
-                Session("email") = dv(0)(3)
-                Session("type") = dv(0)(6)
-                Response.Redirect("customer/Dashboard.aspx")
+                Session("firstName") = dv(0)(4).trim()
+                Session("lastName") = dv(0)(5).trim()
+                Session("email") = dv(0)(3).trim()
+                Session("type") = dv(0)(6).trim()
+                If Session("type") Like "customer" Then
+                    Response.Redirect("customer/Dashboard.aspx")
+                ElseIf Session("type") Like "admin" Then
+                    Response.Redirect("Admin/Dashboard.aspx")
+                ElseIf Session("type") Like "contentmanager" Then
+                    Response.Redirect("ContentManager/Dashboard.aspx")
+                End If
             End If
         End If
     End Sub
