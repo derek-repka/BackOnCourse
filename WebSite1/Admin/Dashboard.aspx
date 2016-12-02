@@ -1,12 +1,14 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Dashboard.aspx.vb" Inherits="customer_Dashboard2" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Dashboard.aspx.vb" Inherits="Admin_Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="ManageContent.aspx">Manage Content</a></li>
+            <li class = "active"><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="ManageProduct.aspx">Manage Products</a></li>
+            <li><a href="ManageWorkshop.aspx">Manage Workshops</a></li>
+            <li><a href="ManageCourse.aspx">Manage eCourses</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="Settings.aspx">Settings</a></li>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageContent.aspx.vb" Inherits="Admin_ManageContent" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageProduct.aspx.vb" Inherits="Admin_ManageProduct" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container-fluid">
@@ -6,7 +6,9 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li class = "active"><a href="ManageContent.aspx">Manage Content</a></li>
+            <li class ="active"><a href="ManageProduct.aspx">Manage Products</a></li>
+            <li><a href="ManageWorkshop.aspx">Manage Workshops</a></li>
+            <li><a href="ManageCourse.aspx">Manage eCourses</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="Settings.aspx">Settings</a></li>
