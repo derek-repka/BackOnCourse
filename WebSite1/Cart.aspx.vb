@@ -10,9 +10,10 @@ Partial Class Cart
         End If
         TotalPrice.Text = dv(0)(0)
     End Sub
-    Protected Sub CartProductGridView_RowCommand(sender As Object, e As GridViewCommandEventArgs)
+    Protected Sub CartProductGridView_RowCommand(grid As GridView, e As GridViewCommandEventArgs)
         Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-        Dim row As GridViewRow = CartProductGridView.Rows(index)
+        Dim row As GridViewRow = grid.Rows(index)
+        Dim ordeLineId As Integer = grid.DataKeys(index).Value
         Dim quantity As Integer = Convert.ToInt32(row.Cells(3).Text)
         If e.CommandName.Equals("increaseQuantity") Then
             quantity += 1
