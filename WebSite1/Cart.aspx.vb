@@ -5,6 +5,9 @@ Partial Class CartPage
     Inherits System.Web.UI.Page
     Protected Sub Page_LoadComplete(sender As Object, e As EventArgs)
         Dim dv As DataView = CType(totalPriceDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+        If dv(0)(0) = 0 Then
+            btnCheckout.Disabled = True
+        End If
         TotalPrice.Text = dv(0)(0)
     End Sub
     Protected Sub CartProductGridView_RowCommand(sender As Object, e As GridViewCommandEventArgs)
