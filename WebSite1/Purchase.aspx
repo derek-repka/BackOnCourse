@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Purchase.aspx.vb" Inherits="Purchase" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Purchase.aspx.vb" Inherits="Purchase" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
@@ -154,7 +154,7 @@
                     </div>
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active"><a href="#"><span class="badge pull-right">
-                                <asp:Label ID="finalPaymentLal" runat="server" Text="0.00"></asp:Label>
+                                $<asp:Label ID="finalPaymentLal" runat="server" Text="0.00"></asp:Label>
                                 </span>&nbsp;Final Payment</a></li>
                         </ul>
                         <!-- this Data Source is used to display the total price -->
