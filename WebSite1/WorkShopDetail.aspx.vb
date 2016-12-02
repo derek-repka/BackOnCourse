@@ -25,7 +25,7 @@ Partial Class WorkShopDetail
 
         If Session("id") Is Nothing Then
             workshopCartButton.Enabled = False
-            Nonmember.Text = "You are not currently signed in. Please sign in to add to your cart."
+            Nonmember.Text = "You are not currently signed in. Please sign in to add to your cart. Not a member? <a href=""\Default.aspx""> Click Here.</a>"
         End If
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load

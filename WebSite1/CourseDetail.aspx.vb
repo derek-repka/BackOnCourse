@@ -28,7 +28,7 @@ Partial Class CourseDetail
             End If
             If Session("id") Is Nothing Then
                 CartCourseButton.Enabled = False
-                NonMember.Text = "You are not currently signed in. Please sign in to add to your cart."
+                NonMember.Text = "You are not currently signed in. Please sign in to add to your cart.Not a member? <a href=""\Default.aspx""> Click Here.</a>"
             End If
         End If
     End Sub
