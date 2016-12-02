@@ -32,6 +32,7 @@
                   &nbsp;&nbsp; </button>
               <br />
               <asp:CompareValidator ID="dateValidator" runat="server" ControlToValidate="courseDate" ErrorMessage="Please enter a valid date in the form 'YYYY-MM-DD'." Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
+              <asp:Label ID="wrongDate" runat="server" Text="You entered a date before today." Visible="False"></asp:Label>
               <br />
           </div>
           <div style="float:left;width:243px; height: 50px;"><asp:Button CssClass="btn btn-primary" ID="searchButton" runat="server" Text="Search" />
@@ -44,7 +45,7 @@
     <p>
         &nbsp;</p>
     <p>
-        </p>
+        &nbsp;</p>
     <p>
         <asp:GridView ID="Courses" CssClass="table table-striped table-bordered table-hover" runat="server" Width="845px" AutoGenerateColumns="False" DataSourceID="sqlCourses" AllowSorting="True" Height="82px" DataKeyNames="Workshop Number" EmptyDataText="No results. Please change your search parameters.">
                 <Columns>
