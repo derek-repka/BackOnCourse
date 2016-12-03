@@ -13,7 +13,7 @@
           <p>
               Please browse our selection of safety and training online course and products available for purchase.</p>
           <p>
-            &nbsp;</p>
+              &nbsp;</p>
           <p>
               <strong>Sign up with us and discover how being a client can benefit your company! </strong>
         </p>
@@ -21,6 +21,8 @@
       
       <div class="col-md-4">
         <h1>Sign Up</h1>
+        <asp:Label ID="signUpWarningLabel" runat="server" Visible="false">Please enter correct sign up information</asp:Label>
+          <asp:Label ID="Label1" runat="server" Visible="false">Please enter correct sign up information</asp:Label>
         <div class="form-group row">
           <div class="col-xs-5">
             <input id="txtRegFirstName" runat="server" type="text" class="form-control" placeholder="First Name">
@@ -38,7 +40,10 @@
                 <input id="txtRegEmail" runat="server" type="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
-                <input id="txtRegPassword" runat="server" type="password" class="form-control" placeholder="New Password">
+                <input id="txtRegPassword" runat="server" type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input id="txtRegReEnterPassword" runat="server" type="password" class="form-control" placeholder="Re-enter Password">
             </div>
           </div>
           <h5><small>By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</small></h5>
@@ -79,7 +84,6 @@
           <li style="display: inline; margin: 10px"><a href="About.aspx">About Us</a></li>
           <li style="display: inline; margin: 10px"><a href="Contact.aspx">Contact Information</a></li>
           <li style="display: inline; margin: 10px"><a href="PressPage.aspx">Press</a></li>
-          <li style="display: inline; margin: 10px">This site is for academic credit only and it does not represent any real organization. No goods or services are offered or implied.</li>
         </ul>
       </div>
     </footer>

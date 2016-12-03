@@ -106,8 +106,7 @@
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <div role="form">
-                                 
+                            <div role="form"> 
                                 <div class="form-group">
                                     <label for="BAddress">
                                         BILLING ADDRESS</label>
