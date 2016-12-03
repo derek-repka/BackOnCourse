@@ -16,23 +16,23 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-5">
-                <asp:GridView ID="gveCourses" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldseCourse" AutoGenerateColumns="False" Width="750px" DataKeyNames="ProductID">
+                <asp:GridView ID="gveCourses" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldseCourse" AutoGenerateColumns="False" Width="750px" DataKeyNames="productID">
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
-                        <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" InsertVisible="False" ReadOnly="True" />
-                        <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
-                        <asp:BoundField DataField="TopicID" HeaderText="TopicID" SortExpression="TopicID" />
-                        <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
-                        <asp:BoundField DataField="StyleID" HeaderText="StyleID" SortExpression="StyleID"/>
-                        <asp:BoundField DataField="QuantiyPerUnit" HeaderText="QuantiyPerUnit" SortExpression="QuantiyPerUnit" />
-                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                        <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                        <asp:BoundField DataField="Discontinued" HeaderText="Discontinued" SortExpression="Discontinued" />
-<asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID"></asp:BoundField>
+                        <asp:BoundField DataField="productID" HeaderText="productID" SortExpression="productID" InsertVisible="False" ReadOnly="True" />
+                        <asp:BoundField DataField="productName" HeaderText="productName" SortExpression="productName" />
+                        <asp:BoundField DataField="topicID" HeaderText="topicID" SortExpression="topicID" />
+                        <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID"/>
+                        <asp:BoundField DataField="styleID" HeaderText="styleID" SortExpression="styleID" />
+                        <asp:BoundField DataField="quantityPerUnit" HeaderText="quantityPerUnit" SortExpression="quantityPerUnit" />
+                        <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+                        <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
+                        <asp:BoundField DataField="discontinued" HeaderText="discontinued" SortExpression="discontinued" />
+                        <asp:BoundField DataField="instructorID" HeaderText="instructorID" SortExpression="instructorID" />
                     </Columns>
                 <PagerSettings Position="TopAndBottom" />
             </asp:GridView>
-            <asp:SqlDataSource ID="sqldseCourse" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID AS ProductID, productName AS ProductName, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS QuantiyPerUnit, price AS Price, description AS Description, discontinued AS Discontinued, instructorID AS InstructorID FROM platformProduct WHERE (categoryID = 2) AND (firmID = @firmID)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE [platformProduct] SET [firmID] = @firmID, [productName] = @productName, [topicID] = @topicID, [categoryID] = @categoryID, [styleID] = @styleID, [quantityPerUnit] = @quantityPerUnit, [price] = @price, [description] = @description, [discontinued] = @discontinued, [instructorID] = @instructorID WHERE [productID] = @productID">
+            <asp:SqlDataSource ID="sqldseCourse" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID, productName, topicID, categoryID, styleID, quantityPerUnit, price, description, discontinued, instructorID FROM platformProduct WHERE (firmID = @firmID) AND (categoryID = 2)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE platformProduct SET productName = @productName, topicID = @topicID, categoryID = @categoryID, styleID = @styleID, quantityPerUnit = @quantityPerUnit, price = @price, description = @description, discontinued = @discontinued, instructorID = @instructorID WHERE (productID = @productID)">
                 <DeleteParameters>
                     <asp:Parameter Name="productID" Type="Int32" />
                 </DeleteParameters>
@@ -55,7 +55,6 @@
                     <asp:SessionParameter Name="firmID" SessionField="firmID" />
                 </SelectParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="firmID" Type="Int32" />
                     <asp:Parameter Name="productName" Type="String" />
                     <asp:Parameter Name="topicID" Type="Int32" />
                     <asp:Parameter Name="categoryID" Type="Int32" />

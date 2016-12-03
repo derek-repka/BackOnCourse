@@ -76,7 +76,7 @@ Partial Public Class SiteMaster
                 Session("lastName") = dv(0)(5).trim()
                 Session("email") = dv(0)(3).trim()
                 Session("type") = dv(0)(6).trim()
-                Session("firmID") = dv(0)(7).trim()
+                Session("firmID") = dv(0)(7)
                 If Session("type") Like "customer" Then
                     Response.Redirect("customer/Dashboard.aspx")
                 ElseIf Session("type") Like "admin" Then

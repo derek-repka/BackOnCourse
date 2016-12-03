@@ -16,22 +16,21 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-5">
-                <asp:GridView ID="gvWorkshops" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldsWorkshop" AutoGenerateColumns="False" Width="750px" DataKeyNames="WorkshopID">
+                <asp:GridView ID="gvWorkshops" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldsWorkshop" AutoGenerateColumns="False" Width="750px" DataKeyNames="workshopID">
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
-                        <asp:BoundField DataField="WorkshopID" HeaderText="WorkshopID" SortExpression="WorkshopID" InsertVisible="False" ReadOnly="True" />
-                        <asp:BoundField DataField="Cirt" HeaderText="Cirt" SortExpression="Cirt" />
-                        <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
-                        <asp:BoundField DataField="Date &amp; Time" HeaderText="Date &amp; Time" SortExpression="Date &amp; Time" />
-<asp:BoundField DataField="TopicID" HeaderText="TopicID" SortExpression="TopicID"></asp:BoundField>
-                        <asp:BoundField DataField="FirmID" HeaderText="FirmID" SortExpression="FirmID" />
-                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                        <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-                        <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" />
+                        <asp:BoundField DataField="workshopID" HeaderText="workshopID" SortExpression="workshopID" InsertVisible="False" ReadOnly="True" />
+                        <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
+                        <asp:BoundField DataField="location" HeaderText="location" SortExpression="location" />
+                        <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
+<asp:BoundField DataField="topicID" HeaderText="topicID" SortExpression="topicID"></asp:BoundField>
+                        <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+                        <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+                        <asp:BoundField DataField="instructorID" HeaderText="instructorID" SortExpression="instructorID" />
                     </Columns>
                 <PagerSettings Position="Top" />
             </asp:GridView>
-            <asp:SqlDataSource ID="sqldsWorkshop" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformWorkshop] ([city], [location], [dateTime], [topicID], [firmID], [price], [quantity], [instructorID]) VALUES (@city, @location, @dateTime, @topicID, @firmID, @price, @quantity, @instructorID)" SelectCommand="SELECT workshopID AS WorkshopID, city AS Cirt, location AS Location, dateTime AS [Date &amp; Time], topicID AS TopicID, firmID AS FirmID, price AS Price, quantity AS Quantity, instructorID AS InstructorID FROM platformWorkshop" DeleteCommand="DELETE FROM [platformWorkshop] WHERE [workshopID] = @workshopID" UpdateCommand="UPDATE [platformWorkshop] SET [city] = @city, [location] = @location, [dateTime] = @dateTime, [topicID] = @topicID, [firmID] = @firmID, [price] = @price, [quantity] = @quantity, [instructorID] = @instructorID WHERE [workshopID] = @workshopID">
+            <asp:SqlDataSource ID="sqldsWorkshop" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformWorkshop] ([city], [location], [dateTime], [topicID], [firmID], [price], [quantity], [instructorID]) VALUES (@city, @location, @dateTime, @topicID, @firmID, @price, @quantity, @instructorID)" SelectCommand="SELECT workshopID, city, location, dateTime, topicID, price, quantity, instructorID FROM platformWorkshop WHERE (firmID = @firmID)" DeleteCommand="DELETE FROM [platformWorkshop] WHERE [workshopID] = @workshopID" UpdateCommand="UPDATE [platformWorkshop] SET [city] = @city, [location] = @location, [dateTime] = @dateTime, [topicID] = @topicID, [price] = @price, [quantity] = @quantity, [instructorID] = @instructorID WHERE [workshopID] = @workshopID">
                 <DeleteParameters>
                     <asp:Parameter Name="workshopID" Type="Int32" />
                 </DeleteParameters>
@@ -45,12 +44,14 @@
                     <asp:Parameter Name="quantity" Type="Int32" />
                     <asp:Parameter Name="instructorID" Type="Int32" />
                 </InsertParameters>
+                <SelectParameters>
+                    <asp:SessionParameter Name="firmID" SessionField="firmID" />
+                </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="city" Type="String" />
                     <asp:Parameter Name="location" Type="String" />
                     <asp:Parameter Name="dateTime" Type="DateTime" />
                     <asp:Parameter Name="topicID" Type="Int32" />
-                    <asp:Parameter Name="firmID" Type="Int32" />
                     <asp:Parameter Name="price" Type="Decimal" />
                     <asp:Parameter Name="quantity" Type="Int32" />
                     <asp:Parameter Name="instructorID" Type="Int32" />

@@ -15,6 +15,14 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="col-md-10"> 
+                <div class="form-group">
+                    <input id="txtRegPassword" runat="server" type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input id="txtRegReEnterPassword" runat="server" type="password" class="form-control" placeholder="Re-enter Password">
+                </div>
+            </div>
         </div>
       </div>
     </div>
