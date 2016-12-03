@@ -111,7 +111,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <asp:SqlDataSource ID="loginDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT * FROM [platformUser] WHERE (([password] = @password) AND ([email] = @email))">
+        <asp:SqlDataSource ID="loginDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT userID, companyName, email, password, firstName, lastName, type, firmID FROM platformUser WHERE (password = @password) AND (email = @email)">
             <SelectParameters>
                 <asp:Parameter DefaultValue="@password" Name="password" Type="String" />
                 <asp:Parameter DefaultValue="@email" Name="email" Type="String" />

@@ -6,9 +6,9 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="ManageProduct.aspx">Manage Products</a></li>
+            <li class ="active"><a href="ManageProduct.aspx">Manage Products</a></li>
             <li><a href="ManageWorkshop.aspx">Manage Workshops</a></li>
-            <li class ="active"><a href="ManageCourse.aspx">Manage eCourses</a></li>
+            <li><a href="ManageCourse.aspx">Manage eCourses</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="Settings.aspx">Settings</a></li>
@@ -16,25 +16,26 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-5">
-                <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldsProducts" AutoGenerateColumns="False" Width="750px" style="margin-bottom: 20px">
+                <asp:GridView ID="gvProducts" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldsProducts" AutoGenerateColumns="False" Width="750px" style="margin-bottom: 20px" DataKeyNames="ProductID">
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
+                        <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" InsertVisible="False" ReadOnly="True" />
                         <asp:BoundField DataField="FirmID" HeaderText="FirmID" SortExpression="FirmID" />
-                        <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                        <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
                         <asp:BoundField DataField="TopicID" HeaderText="TopicID" SortExpression="TopicID" />
                         <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
                         <asp:BoundField DataField="StyleID" HeaderText="StyleID" SortExpression="StyleID" />
-                        <asp:BoundField DataField="Quantity/Unit" HeaderText="Quantity/Unit" SortExpression="Quantity/Unit" />
+                        <asp:BoundField DataField="QuantityPerUnit" HeaderText="QuantityPerUnit" SortExpression="QuantityPerUnit" />
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
                         <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                        <asp:BoundField DataField="Units in Stock" HeaderText="Units in Stock" SortExpression="Units in Stock" />
-                        <asp:BoundField DataField="Units on Order" HeaderText="Units on Order" SortExpression="Units on Order" />
-                        <asp:BoundField DataField="Reorder Level" HeaderText="Reorder Level" SortExpression="Reorder Level" />
+                        <asp:BoundField DataField="UnitsInStock" HeaderText="UnitsInStock" SortExpression="UnitsInStock" />
+                        <asp:BoundField DataField="UnitsOnOrder" HeaderText="UnitsOnOrder" SortExpression="UnitsOnOrder" />
+                        <asp:BoundField DataField="ReorderLevel" HeaderText="ReorderLevel" SortExpression="ReorderLevel" />
                         <asp:BoundField DataField="Discontinued" HeaderText="Discontinued" SortExpression="Discontinued" />
                     </Columns>
                 <PagerSettings Position="Top" />
             </asp:GridView>
-            <asp:SqlDataSource ID="sqldsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO platformProduct(firmID, productName, topicID, categoryID, styleID, quantityPerUnit, price, description, unitsInStock, unitsOnOrder, reorderLevel, discontinued) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued)" SelectCommand="SELECT firmID AS FirmID, productName AS Name, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS [Quantity/Unit], price AS Price, description AS Description, unitsInStock AS [Units in Stock], unitsOnOrder AS [Units on Order], reorderLevel AS [Reorder Level], discontinued AS Discontinued FROM platformProduct WHERE (categoryID = 1)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE platformProduct SET firmID = @firmID, productName = @productName, topicID = @topicID, categoryID = @categoryID, styleID = @styleID, quantityPerUnit = @quantityPerUnit, price = @price, description = @description, unitsInStock = @unitsInStock, unitsOnOrder = @unitsOnOrder, reorderLevel = @reorderLevel, discontinued = @discontinued WHERE (productID = @productID)">
+            <asp:SqlDataSource ID="sqldsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID AS ProductID, firmID AS FirmID, productName AS ProductName, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS QuantityPerUnit, price AS Price, description AS Description, unitsInStock AS UnitsInStock, unitsOnOrder AS UnitsOnOrder, reorderLevel AS ReorderLevel, discontinued AS Discontinued FROM platformProduct WHERE (categoryID = 1)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE [platformProduct] SET [firmID] = @firmID, [productName] = @productName, [topicID] = @topicID, [categoryID] = @categoryID, [styleID] = @styleID, [quantityPerUnit] = @quantityPerUnit, [price] = @price, [description] = @description, [unitsInStock] = @unitsInStock, [unitsOnOrder] = @unitsOnOrder, [reorderLevel] = @reorderLevel, [discontinued] = @discontinued WHERE [productID] = @productID">
                 <DeleteParameters>
                     <asp:Parameter Name="productID" Type="Int32" />
                 </DeleteParameters>
@@ -51,6 +52,7 @@
                     <asp:Parameter Name="unitsOnOrder" Type="Int32" />
                     <asp:Parameter Name="reorderLevel" Type="Int32" />
                     <asp:Parameter Name="discontinued" Type="String" />
+                    <asp:Parameter Name="instructorID" Type="Int32" />
                 </InsertParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="firmID" Type="Int32" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageCourse.aspx.vb" Inherits="Admin_ManageCourse" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageCourse.aspx.vb" Inherits="ContentManager_ManageCourse" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container-fluid">
@@ -20,20 +20,19 @@
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
                         <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" InsertVisible="False" ReadOnly="True" />
-                        <asp:BoundField DataField="FirmID" HeaderText="FirmID" SortExpression="FirmID" />
                         <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
                         <asp:BoundField DataField="TopicID" HeaderText="TopicID" SortExpression="TopicID" />
-                        <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID"/>
-                        <asp:BoundField DataField="StyleID" HeaderText="StyleID" SortExpression="StyleID" />
+                        <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
+                        <asp:BoundField DataField="StyleID" HeaderText="StyleID" SortExpression="StyleID"/>
                         <asp:BoundField DataField="QuantiyPerUnit" HeaderText="QuantiyPerUnit" SortExpression="QuantiyPerUnit" />
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
                         <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-<asp:BoundField DataField="Discontinued" HeaderText="Discontinued" SortExpression="Discontinued"></asp:BoundField>
-                        <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" />
+                        <asp:BoundField DataField="Discontinued" HeaderText="Discontinued" SortExpression="Discontinued" />
+<asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID"></asp:BoundField>
                     </Columns>
                 <PagerSettings Position="TopAndBottom" />
             </asp:GridView>
-            <asp:SqlDataSource ID="sqldseCourse" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID AS ProductID, firmID AS FirmID, productName AS ProductName, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS QuantiyPerUnit, price AS Price, description AS Description, discontinued AS Discontinued, instructorID AS InstructorID FROM platformProduct WHERE (categoryID = 2)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE [platformProduct] SET [firmID] = @firmID, [productName] = @productName, [topicID] = @topicID, [categoryID] = @categoryID, [styleID] = @styleID, [quantityPerUnit] = @quantityPerUnit, [price] = @price, [description] = @description, [discontinued] = @discontinued, [instructorID] = @instructorID WHERE [productID] = @productID">
+            <asp:SqlDataSource ID="sqldseCourse" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID AS ProductID, productName AS ProductName, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS QuantiyPerUnit, price AS Price, description AS Description, discontinued AS Discontinued, instructorID AS InstructorID FROM platformProduct WHERE (categoryID = 2) AND (firmID = @firmID)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE [platformProduct] SET [firmID] = @firmID, [productName] = @productName, [topicID] = @topicID, [categoryID] = @categoryID, [styleID] = @styleID, [quantityPerUnit] = @quantityPerUnit, [price] = @price, [description] = @description, [discontinued] = @discontinued, [instructorID] = @instructorID WHERE [productID] = @productID">
                 <DeleteParameters>
                     <asp:Parameter Name="productID" Type="Int32" />
                 </DeleteParameters>
@@ -52,6 +51,9 @@
                     <asp:Parameter Name="discontinued" Type="String" />
                     <asp:Parameter Name="instructorID" Type="Int32" />
                 </InsertParameters>
+                <SelectParameters>
+                    <asp:SessionParameter Name="firmID" SessionField="firmID" />
+                </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="firmID" Type="Int32" />
                     <asp:Parameter Name="productName" Type="String" />
@@ -76,8 +78,6 @@
                  </div>
                  <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel-body">
-                    FirmID: <asp:TextBox ID="FirmID" runat="server"></asp:TextBox>
-                         <br />
                     eCourse Name: <asp:TextBox ID="productName" runat="server"></asp:TextBox>
                          <br />
                     TopicID: <asp:TextBox ID="TopicID" runat="server"></asp:TextBox>
