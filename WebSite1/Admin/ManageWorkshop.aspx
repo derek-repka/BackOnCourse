@@ -69,6 +69,48 @@
                  </div>
                 </div>
                </div>
+                <div class ="form-group row"><div style="float:left;width:165px; height: 50px;">
+                    City:
+                <asp:TextBox ID="City" runat="server"></asp:TextBox>
+                </div>
+                    <div style="float:left;width:192px; height: 50px;">
+                        Location:
+                <asp:TextBox ID="Location" runat="server"></asp:TextBox>
+                    </div>
+                    <div style="float:left;width:205px; height: 50px;">
+                        Date&amp;Time<asp:TextBox ID="Date" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <br />
+&nbsp;<br />
+&nbsp;<br />
+                <div class ="form-group row"><div style="float:left;width:209px; height: 50px;">
+                        TopicID:
+                <asp:TextBox ID="TopicID" runat="server"></asp:TextBox>
+                    </div>
+                    <div style="float:left;width:209px; height: 50px;">
+                        FirmID:
+                <asp:TextBox ID="FirmID" runat="server"></asp:TextBox>
+                    </div>
+                    <div style="float:left;width:209px; height: 50px;">
+                        Price:
+                <asp:TextBox ID="Price" runat="server"></asp:TextBox>
+                    </div>
+                    </div>
+                <br />
+                <br />
+&nbsp;<br />
+                <div class ="form-group row"><div style="float:left;width:209px; height: 50px;">
+                        Quantity:
+                <asp:TextBox ID="Quantity" runat="server"></asp:TextBox>
+                    </div>
+                    <div style="float:left;width:209px; height: 50px;">
+                        InstructorID:
+                <asp:TextBox ID="InstructorID" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+
+                <br />
 
             <br />
             <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="sqldsInstructors" Height="50px" Width="125px" DataKeyNames="instructorID">
@@ -99,5 +141,6 @@
         </div>
       </div>
     </div>
+   </div>
 </asp:Content>
 
