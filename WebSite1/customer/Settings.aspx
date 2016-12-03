@@ -25,8 +25,17 @@
                 <div class="form-group">
                     <input id="reEnterNewPassword" runat="server" type="password" class="form-control" placeholder="Re-enter Password">
                 </div>
-                <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Reset Password" />
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Button CssClass="btn btn-primary" ID="restButton" runat="server" Text="Reset Password" />
+                <asp:Label ID="warningLabel" runat="server"></asp:Label>
+                <asp:SqlDataSource ID="resetPasswordDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT password FROM platformUser WHERE (userID = @userID)" UpdateCommand="UPDATE platformUser SET password = @password WHERE (userID = @userID)">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="userID" SessionField="id" />
+                    </SelectParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="password" />
+                        <asp:Parameter Name="userID" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
             </div>
         </div>
       </div>
