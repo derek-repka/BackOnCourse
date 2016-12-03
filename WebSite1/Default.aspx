@@ -49,7 +49,7 @@
           <h5><small>By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</small></h5>
           <div class="form-group row">
             <div class="col-xs-6">
-              <button type="submit" class="btn btn-primary btn-block" runat="server" onserverclick="Register">Sign Up</button>
+              <asp:Button ID="signUpButton" CssClass="btn btn-primary btn-block" runat="server" Text="Sign Up"/>
             </div>
           </div>
         </div>

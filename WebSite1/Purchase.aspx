@@ -43,12 +43,12 @@
                             <div class="panel-heading">Workshops</div>
                             <asp:GridView ID="CartWorkshopGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="cartWorkshopDataSource" EmptyDataText="No Workshop in Your Cart">
                                 <Columns>
-                                    <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-                                    <asp:BoundField DataField="location" HeaderText="location" SortExpression="location" />
-                                    <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
-                                    <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
-                                    <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
-                                    <asp:BoundField DataField="topicCode" HeaderText="topicCode" SortExpression="topicCode" />
+                                    <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
+                                    <asp:BoundField DataField="location" HeaderText="Location" SortExpression="location" />
+                                    <asp:BoundField DataField="dateTime" HeaderText="Date Time" SortExpression="dateTime" />
+                                    <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price" />
+                                    <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
+                                    <asp:BoundField DataField="topicCode" HeaderText="Topic Code" SortExpression="topicCode" />
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -63,10 +63,10 @@
                             <div class="panel-heading">eCourse</div>
                             <asp:GridView ID="CarteCourseGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="carteCourseDataSource" EmptyDataText="No eCourse and in Your Cart">
                                 <Columns>
-                                    <asp:BoundField DataField="productName" HeaderText="productName" SortExpression="productName" />
-                                    <asp:BoundField DataField="productPrice" HeaderText="productPrice" SortExpression="productPrice" />
-                                    <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
-                                    <asp:BoundField DataField="styleDescription" HeaderText="styleDescription" SortExpression="styleDescription" />
+                                    <asp:BoundField DataField="productName" HeaderText="Product Name" SortExpression="productName" HeaderStyle-Width="50%"/>
+                                    <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" HeaderStyle-Width="10%"/>
+                                    <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" HeaderStyle-Width="15%"/>
+                                    <asp:BoundField DataField="styleDescription" HeaderText="Style Description" SortExpression="styleDescription" HeaderStyle-Width="25%"/>
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -81,10 +81,10 @@
                             <div class="panel-heading">Product</div>
                             <asp:GridView ID="CartProductGridView" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="orderLineID" DataSourceID="cartProductDataSource" EmptyDataText="No Product in Your Cart">
                                 <Columns>
-                                    <asp:BoundField DataField="productName" HeaderText="productName" SortExpression="productName" />
-                                    <asp:BoundField DataField="productPrice" HeaderText="productPrice" SortExpression="productPrice" />
-                                    <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
-                                    <asp:BoundField DataField="styleDescription" HeaderText="styleDescription" SortExpression="styleDescription" />
+                                    <asp:BoundField DataField="productName" HeaderText="Product Name" SortExpression="productName" HeaderStyle-Width="50%"/>
+                                    <asp:BoundField DataField="productPrice" HeaderText="Price" SortExpression="productPrice" HeaderStyle-Width="10%"/>
+                                    <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" HeaderStyle-Width="15%"/>
+                                    <asp:BoundField DataField="styleDescription" HeaderText="Style Description" SortExpression="styleDescription" HeaderStyle-Width="25%"/>
                                 </Columns>
                             </asp:GridView>
                         </div>

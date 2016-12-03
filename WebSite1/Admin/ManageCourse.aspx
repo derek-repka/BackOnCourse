@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Settings.aspx.vb" Inherits="Admin_Settings" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageCourse.aspx.vb" Inherits="Admin_ManageCourse" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container-fluid">
@@ -8,13 +8,17 @@
             <li><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
             <li><a href="ManageProduct.aspx">Manage Products</a></li>
             <li><a href="ManageWorkshop.aspx">Manage Workshops</a></li>
-            <li><a href="ManageCourse.aspx">Manage eCourses</a></li>
+            <li class = "active"><a href="ManageCourse.aspx">Manage eCourses</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="Settings.aspx">Settings</a></li>
+            <li><a href="Settings.aspx">Settings</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSource1">
+                <PagerSettings Position="Top" />
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
         </div>
       </div>
     </div>

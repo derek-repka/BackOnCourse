@@ -14,13 +14,13 @@ Partial Class Cart
         Dim index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim row As GridViewRow = grid.Rows(index)
         Dim ordeLineId As Integer = grid.DataKeys(index).Value
-        Dim quantity As Integer = Convert.ToInt32(row.Cells(3).Text)
+        Dim quantity As Integer = Convert.ToInt32(row.Cells(4).Text)
         If e.CommandName.Equals("increaseQuantity") Then
             quantity += 1
         ElseIf e.CommandName.Equals("decreaseQuantity") And quantity > 1 Then
             quantity -= 1
         End If
-        row.Cells(3).Text = quantity
+        row.Cells(4).Text = quantity
         cartProductDataSource.UpdateParameters("orderLineId").DefaultValue = ordeLineId
         cartProductDataSource.UpdateParameters("quantity").DefaultValue = quantity
         cartProductDataSource.Update()
