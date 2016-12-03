@@ -20,7 +20,6 @@
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
                         <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" InsertVisible="False" ReadOnly="True" />
-                        <asp:BoundField DataField="FirmID" HeaderText="FirmID" SortExpression="FirmID" />
                         <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
                         <asp:BoundField DataField="TopicID" HeaderText="TopicID" SortExpression="TopicID" />
                         <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
@@ -35,7 +34,7 @@
                     </Columns>
                 <PagerSettings Position="Top" />
             </asp:GridView>
-            <asp:SqlDataSource ID="sqldsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID AS ProductID, firmID AS FirmID, productName AS ProductName, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS QuantityPerUnit, price AS Price, description AS Description, unitsInStock AS UnitsInStock, unitsOnOrder AS UnitsOnOrder, reorderLevel AS ReorderLevel, discontinued AS Discontinued FROM platformProduct WHERE (categoryID = 1)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE [platformProduct] SET [firmID] = @firmID, [productName] = @productName, [topicID] = @topicID, [categoryID] = @categoryID, [styleID] = @styleID, [quantityPerUnit] = @quantityPerUnit, [price] = @price, [description] = @description, [unitsInStock] = @unitsInStock, [unitsOnOrder] = @unitsOnOrder, [reorderLevel] = @reorderLevel, [discontinued] = @discontinued WHERE [productID] = @productID">
+            <asp:SqlDataSource ID="sqldsProducts" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformProduct] ([firmID], [productName], [topicID], [categoryID], [styleID], [quantityPerUnit], [price], [description], [unitsInStock], [unitsOnOrder], [reorderLevel], [discontinued], [instructorID]) VALUES (@firmID, @productName, @topicID, @categoryID, @styleID, @quantityPerUnit, @price, @description, @unitsInStock, @unitsOnOrder, @reorderLevel, @discontinued, @instructorID)" SelectCommand="SELECT productID AS ProductID, productName AS ProductName, topicID AS TopicID, categoryID AS CategoryID, styleID AS StyleID, quantityPerUnit AS QuantityPerUnit, price AS Price, description AS Description, unitsInStock AS UnitsInStock, unitsOnOrder AS UnitsOnOrder, reorderLevel AS ReorderLevel, discontinued AS Discontinued FROM platformProduct WHERE (categoryID = 1) AND (firmID = @firmID)" DeleteCommand="DELETE FROM [platformProduct] WHERE [productID] = @productID" UpdateCommand="UPDATE platformProduct SET productName = @productName, topicID = @topicID, categoryID = @categoryID, styleID = @styleID, quantityPerUnit = @quantityPerUnit, price = @price, description = @description, unitsInStock = @unitsInStock, unitsOnOrder = @unitsOnOrder, reorderLevel = @reorderLevel, discontinued = @discontinued WHERE (productID = @productID)">
                 <DeleteParameters>
                     <asp:Parameter Name="productID" Type="Int32" />
                 </DeleteParameters>
@@ -54,8 +53,10 @@
                     <asp:Parameter Name="discontinued" Type="String" />
                     <asp:Parameter Name="instructorID" Type="Int32" />
                 </InsertParameters>
+                <SelectParameters>
+                    <asp:SessionParameter Name="firmID" SessionField="firmID" />
+                </SelectParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="firmID" Type="Int32" />
                     <asp:Parameter Name="productName" Type="String" />
                     <asp:Parameter Name="topicID" Type="Int32" />
                     <asp:Parameter Name="categoryID" Type="Int32" />
