@@ -136,7 +136,7 @@
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="MM" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                             <asp:RangeValidator runat="server" ControlToValidate="MM" MinimumValue="01" MaximumValue="12" Type="Integer" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RangeValidator>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="YY" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator runat="server" ControlToValidate="YY" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red" ValidationExpression="(\d){2}"></asp:RegularExpressionValidator>
+                                            <asp:RangeValidator runat="server" ControlToValidate="YY" MinimumValue="16" MaximumValue="99" Type="Integer" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RangeValidator>
                                             <div class="col-xs-6 col-lg-6 pl-ziro">
                                                 <asp:TextBox ID="MM" class="form-control" runat="server" placeholder="MM"></asp:TextBox>
                                             </div>
