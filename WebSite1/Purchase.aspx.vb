@@ -10,4 +10,10 @@ Partial Class Purchase
         paymentDataSource.Update()
         Response.Redirect("/Confirmation.aspx")
     End Sub
+
+    Public Sub onPay(source As Object, e As EventArgs)
+        If Page.IsValid Then
+            'input valid 
+        End If
+    End Sub
 End Class

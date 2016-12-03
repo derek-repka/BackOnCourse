@@ -110,33 +110,38 @@
                                 <div class="form-group">
                                     <label for="BAddress">
                                         BILLING ADDRESS</label>
-                                    <input type="text" class="form-control" id="BAddress" placeholder="Billing Address"
-                                        required autofocus />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="BillingTxt" ErrorMessage="* Billing Address is required" Font-Italic="True" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="BillingTxt" class="form-control" runat="server" placeholder="Billing Address"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="SAddress">
                                         SHIPPING ADDRESS</label>
-                                    <input type="text" class="form-control" id="SAddress" placeholder="Shipping Address"
-                                        required autofocus />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="ShippingTxt" ErrorMessage="* Shipping Address is required" Font-Italic="True" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="ShippingTxt" class="form-control" runat="server" placeholder="Shipping Address"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="cardNumber">
                                         CARD NUMBER</label>
-                                    <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
-                                        required autofocus />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="CardNumberTxt" ErrorMessage="* Please enter valid card number" Display="Dynamic" Font-Italic="True" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator runat="server" ControlToValidate="CardNumberTxt" ErrorMessage="* Please enter valid card number" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red" ValidationExpression="(\d){16}"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="CardNumberTxt" class="form-control" runat="server" placeholder="Valid Card Number"></asp:TextBox>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-7 col-md-6">
                                         <div class="form-group">
                                             <label for="expityMonth">
                                                 EXPIRY DATE</label>
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="MM" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RangeValidator runat="server" ControlToValidate="MM" MinimumValue="01" MaximumValue="12" Type="Integer" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RangeValidator>
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="YY" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator runat="server" ControlToValidate="YY" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red" ValidationExpression="(\d){2}"></asp:RegularExpressionValidator>
                                             <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                                <asp:TextBox ID="MM" class="form-control" runat="server" placeholder="MM"></asp:TextBox>
                                             </div>
                                             <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                <input type="text" class="form-control" id="expityYear" placeholder="YY" required />
+                                                <asp:TextBox ID="YY" class="form-control" runat="server" placeholder="YY"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +149,9 @@
                                         <div class="form-group">
                                             <label for="cvCode">
                                                 CV CODE</label>
-                                            <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="CV" ErrorMessage="*" Display="Dynamic" Font-Italic="True" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RangeValidator runat="server" ControlToValidate="CV" MinimumValue="000" MaximumValue="999" Type="Integer" ErrorMessage="*" Display="Dynamic" Font-Italic="true" Font-Size="Small" ForeColor="Red"></asp:RangeValidator>
+                                            <asp:TextBox ID="CV" class="form-control" runat="server" placeholder="CV"></asp:TextBox>                                         
                                         </div>
                                     </div>
                                 </div>
@@ -166,6 +173,7 @@
                         <a ID="payButton" runat="server" href="#" onserverclick="Pay" class="btn btn-success btn-lg btn-block" role="button">Pay</a>    
                         <br />                      
                         <a ID="backButton" runat="server" href="/Cart.aspx" class="btn btn-success btn-lg btn-block" role="button">Change your order</a>
+                        
                         <br />
                                                 
                 </div>
