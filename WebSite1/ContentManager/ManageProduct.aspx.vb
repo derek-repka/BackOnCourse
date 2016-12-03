@@ -1,9 +1,9 @@
 ﻿
-Partial Class Admin_ManageProduct
+Partial Class ContentManager_ManageProduct
     Inherits System.Web.UI.Page
 
     Protected Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
-        sqldsProducts.InsertParameters("firmID").DefaultValue = FirmID.Text
+        sqldsProducts.InsertParameters("firmID").DefaultValue = Session("firmID")
         sqldsProducts.InsertParameters("productName").DefaultValue = productName.Text
         sqldsProducts.InsertParameters("topicID").DefaultValue = TopicID.Text
         sqldsProducts.InsertParameters("categoryID").DefaultValue = 1

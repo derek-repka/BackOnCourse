@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageWorkshop.aspx.vb" Inherits="Admin_ManageWorkshop" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ManageWorkshop.aspx.vb" Inherits="ContentManager_ManageWorkshop" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container-fluid">
@@ -73,8 +73,6 @@
                     Date&amp;Time: <asp:TextBox ID="Date" runat="server"></asp:TextBox>
                       <br />
                     TopicID: <asp:TextBox ID="TopicID" runat="server"></asp:TextBox>
-                      <br />
-                    FirmID: <asp:TextBox ID="FirmID" runat="server"></asp:TextBox>
                       <br />
                     Price: <asp:TextBox ID="Price" runat="server"></asp:TextBox>
                       <br />
