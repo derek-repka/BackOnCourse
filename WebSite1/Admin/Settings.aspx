@@ -16,14 +16,18 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-5">
-            <asp:GridView ID="gvUsers" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="userID" DataSourceID="sqldsUsers">
+            <asp:GridView ID="gvUsers" runat="server" OnRowCommand="gvUsers_RowCommand" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="userID" DataSourceID="sqldsUsers">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="userID" HeaderText="userID" InsertVisible="False" ReadOnly="True" SortExpression="userID" />
                     <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
                     <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                     <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                     <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" />
+                    <asp:ButtonField CommandName="increaseQuantity" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="select" HeaderStyle-Width="5%">
+<ControlStyle CssClass="btn btn-info"></ControlStyle>
+
+<HeaderStyle Width="5%"></HeaderStyle>
+                    </asp:ButtonField>
                 </Columns>
                 <PagerSettings Position="TopAndBottom" />
             </asp:GridView>

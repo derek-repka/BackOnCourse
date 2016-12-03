@@ -9,8 +9,7 @@ Partial Class Admin_Settings
         If newPass.Text = newPassConfirm.Text Then
             If newPass.Text.Length > 6 Then
                 If adminpass = userDV(0)(0) Then
-                    Dim userID As Integer = Convert.ToInt32(gvUsers.SelectedRow.Cells(0).Text)
-                    sqldsUsers.UpdateParameters("userID").DefaultValue = userID
+                    sqldsUsers.UpdateParameters("userID").DefaultValue = Session("selected")
                     sqldsUsers.UpdateParameters("pass").DefaultValue = TryCast(Me.Master, SiteMaster).Hash(newPass.Text)
                     sqldsUsers.Update()
                     PassChanged.Text = "Password changed."
@@ -46,7 +45,9 @@ Partial Class Admin_Settings
 
     End Sub
 
-    Private Sub gvUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvUsers.SelectedIndexChanged
-
+    Protected Sub gvUsers_RowCommand(grid As GridView, e As GridViewCommandEventArgs)
+        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        Dim userId As Integer = grid.DataKeys(index).Value
+        Session("selected") = userId
     End Sub
 End Class
