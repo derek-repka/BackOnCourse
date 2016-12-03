@@ -17,11 +17,16 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-10"> 
                 <div class="form-group">
-                    <input id="txtRegPassword" runat="server" type="password" class="form-control" placeholder="Password">
+                    <input id="currentPassword" runat="server" type="password" class="form-control" placeholder="Current Password">
                 </div>
                 <div class="form-group">
-                    <input id="txtRegReEnterPassword" runat="server" type="password" class="form-control" placeholder="Re-enter Password">
+                    <input id="newPassword" runat="server" type="password" class="form-control" placeholder="New Password">
                 </div>
+                <div class="form-group">
+                    <input id="reEnterNewPassword" runat="server" type="password" class="form-control" placeholder="Re-enter Password">
+                </div>
+                <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Reset Password" />
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </div>
         </div>
       </div>
