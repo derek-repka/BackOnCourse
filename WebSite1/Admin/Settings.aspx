@@ -15,7 +15,8 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <asp:GridView ID="gvUsers" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="userID" DataSourceID="sqldsUsers">
+            <div class="col-md-5">
+            <asp:GridView ID="gvUsers" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="userID" DataSourceID="sqldsUsers">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="userID" HeaderText="userID" InsertVisible="False" ReadOnly="True" SortExpression="userID" />
@@ -44,17 +45,21 @@
             <br />
             <asp:Button ID="passChange" runat="server" Text="Confirm password change" />
             <br />
-            <asp:Label ID="wronglength" runat="server" Visible="False"></asp:Label>
+            <asp:Label ID="wronglength" runat="server"></asp:Label>
             <br />
             <asp:Label ID="mismatch" runat="server"></asp:Label>
             <br />
             <asp:Label ID="adminPassWrong" runat="server"></asp:Label>
             <br />
+            <asp:Label ID="PassChanged" runat="server"></asp:Label>
             <br />
-            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+            <br />
+            <asp:DropDownList ID="ddlRoles" runat="server" AutoPostBack="True" DataSourceID="sqldsTypes" DataTextField="type" DataValueField="type">
             </asp:DropDownList>
             <br />
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            <asp:Label ID="roleChanged" runat="server"></asp:Label>
+            <br />
+            <asp:SqlDataSource ID="sqldsTypes" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT DISTINCT type FROM platformUser"></asp:SqlDataSource>
             <br />
             <asp:Button ID="roleButton" runat="server" Text="Change Selected User Role" />
             <asp:SqlDataSource ID="sqlAdminPass" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT password FROM platformUser WHERE (userID = @userID)">
@@ -62,10 +67,28 @@
                     <asp:SessionParameter Name="userID" SessionField="id" />
                 </SelectParameters>
             </asp:SqlDataSource>
+            <asp:SqlDataSource ID="sqldsRoles" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformUser] WHERE [userID] = @userID" InsertCommand="INSERT INTO [platformUser] ([companyName], [email], [password], [firstName], [lastName], [type], [firmID]) VALUES (@companyName, @email, @password, @firstName, @lastName, @type, @firmID)" SelectCommand="SELECT * FROM [platformUser]" UpdateCommand="UPDATE platformUser SET type = @type WHERE (userID = @userID)">
+                <DeleteParameters>
+                    <asp:Parameter Name="userID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="companyName" Type="String" />
+                    <asp:Parameter Name="email" Type="String" />
+                    <asp:Parameter Name="password" Type="String" />
+                    <asp:Parameter Name="firstName" Type="String" />
+                    <asp:Parameter Name="lastName" Type="String" />
+                    <asp:Parameter Name="type" Type="String" />
+                    <asp:Parameter Name="firmID" Type="Int32" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="type" Type="String" />
+                    <asp:Parameter Name="userID" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <br />
         </div>
       </div>
-
-
     </div>
+   </div>
 </asp:Content>
 
