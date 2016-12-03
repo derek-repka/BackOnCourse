@@ -78,11 +78,11 @@ Partial Public Class SiteMaster
                 Session("type") = dv(0)(6).trim()
                 Session("firmID") = dv(0)(7)
                 If Session("type") Like "customer" Then
-                    Response.Redirect("customer/Dashboard.aspx")
+                    Response.Redirect("/customer/Dashboard.aspx")
                 ElseIf Session("type") Like "admin" Then
-                    Response.Redirect("Admin/Dashboard.aspx")
+                    Response.Redirect("/Admin/Dashboard.aspx")
                 ElseIf Session("type") Like "contentmanager" Then
-                    Response.Redirect("ContentManager/Dashboard.aspx")
+                    Response.Redirect("/ContentManager/Dashboard.aspx")
                 End If
             Else
                 loginWarning.Visible = True
