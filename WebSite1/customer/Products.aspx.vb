@@ -1,5 +1,5 @@
 ﻿
-Partial Class ContentManager_Settings
+Partial Class customer_Products
     Inherits System.Web.UI.Page
 
 End Class

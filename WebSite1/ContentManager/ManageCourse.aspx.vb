@@ -1,9 +1,9 @@
 ﻿
-Partial Class Admin_ManageCourse
+Partial Class ContentManager_ManageCourse
     Inherits System.Web.UI.Page
 
     Protected Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
-        sqldseCourse.InsertParameters("firmID").DefaultValue = FirmID.Text
+        sqldseCourse.InsertParameters("firmID").DefaultValue = Session("firmID")
         sqldseCourse.InsertParameters("productName").DefaultValue = productName.Text
         sqldseCourse.InsertParameters("TopicID").DefaultValue = TopicID.Text
         sqldseCourse.InsertParameters("categoryID").DefaultValue = 2

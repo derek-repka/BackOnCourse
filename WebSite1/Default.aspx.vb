@@ -1,4 +1,6 @@
 ﻿
+Imports System.Data
+
 Partial Class _Default
     Inherits Page
 
@@ -20,6 +22,14 @@ Partial Class _Default
         dict.Add("ReEnteredPassword", reEnteredPassword)
         dict.Add("Last Name", lastName)
         dict.Add("First Name", firstName)
+
+        registrationDataSource.SelectParameters("email").DefaultValue = email
+        Dim dv As DataView = CType(registrationDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+
+        If dv.Count() Then
+            duplicateEmailWarningLabel.Visible = True
+            Return
+        End If
 
         For Each kv As KeyValuePair(Of String, String) In dict
             If Len(kv.Value) = 0 Then
