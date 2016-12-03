@@ -21,8 +21,8 @@
       
       <div class="col-md-4">
         <h1>Sign Up</h1>
-        <asp:Label ID="signUpWarningLabel" runat="server" Visible="false">Please enter correct sign up information</asp:Label>
-          <asp:Label ID="Label1" runat="server" Visible="false">Please enter correct sign up information</asp:Label>
+          <asp:Label ID="signUpWarningLabel" runat="server" Visible="false">Please enter correct sign up information</asp:Label>
+          <asp:Label ID="duplicateEmailWarningLabel" runat="server" Visible="false">This email already exists</asp:Label>
         <div class="form-group row">
           <div class="col-xs-5">
             <input id="txtRegFirstName" runat="server" type="text" class="form-control" placeholder="First Name">
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="col-md-1"><!--margin to the right--></div>
-        <asp:SqlDataSource ID="registrationDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformUser] WHERE [userID] = @userID" InsertCommand="INSERT INTO [platformUser] ([companyName], [email], [password], [firstName], [lastName], [type]) VALUES (@companyName, @email, @password, @firstName, @lastName, @type)" SelectCommand="SELECT [userID], [companyName], [email], [password], [firstName], [lastName], [type] FROM [platformUser]" UpdateCommand="UPDATE [platformUser] SET [companyName] = @companyName, [email] = @email, [password] = @password, [firstName] = @firstName, [lastName] = @lastName, [type] = @type WHERE [userID] = @userID">
+        <asp:SqlDataSource ID="registrationDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformUser] WHERE [userID] = @userID" InsertCommand="INSERT INTO [platformUser] ([companyName], [email], [password], [firstName], [lastName], [type]) VALUES (@companyName, @email, @password, @firstName, @lastName, @type)" SelectCommand="SELECT userID FROM platformUser WHERE (email = @email)" UpdateCommand="UPDATE [platformUser] SET [companyName] = @companyName, [email] = @email, [password] = @password, [firstName] = @firstName, [lastName] = @lastName, [type] = @type WHERE [userID] = @userID">
             <DeleteParameters>
                 <asp:Parameter Name="userID" Type="Int32" />
             </DeleteParameters>
@@ -67,6 +67,9 @@
                 <asp:Parameter Name="lastName" Type="String" />
                 <asp:Parameter Name="type" Type="String" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:Parameter Name="email" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="companyName" Type="String" />
                 <asp:Parameter Name="email" Type="String" />

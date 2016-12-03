@@ -84,6 +84,8 @@ Partial Public Class SiteMaster
                 ElseIf Session("type") Like "contentmanager" Then
                     Response.Redirect("ContentManager/Dashboard.aspx")
                 End If
+            Else
+                loginWarning.Visible = True
             End If
         End If
     End Sub
