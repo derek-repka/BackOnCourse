@@ -53,7 +53,7 @@ Partial Class _Default
         registrationDataSource.InsertParameters("password").DefaultValue = TryCast(Me.Master, SiteMaster).Hash(password)
         registrationDataSource.InsertParameters("lastName").DefaultValue = lastName
         registrationDataSource.InsertParameters("firstName").DefaultValue = firstName
-
+        registrationDataSource.InsertParameters("type").DefaultValue = "customer"
         If registrationDataSource.Insert() > 0 Then
             Response.Redirect("Account/Register.aspx")
         End If
