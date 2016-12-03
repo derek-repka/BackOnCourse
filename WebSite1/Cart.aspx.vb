@@ -10,6 +10,13 @@ Partial Class Cart
         End If
         TotalPrice.Text = dv(0)(0)
     End Sub
+    Protected Sub Checkout()
+        Dim dv As DataView = CType(totalPriceDataSource.Select(DataSourceSelectArguments.Empty), DataView)
+        If dv(0)(0) <> 0 Then
+            Response.Redirect("/Purchase.aspx")
+        End If
+    End Sub
+
     Protected Sub CartProductGridView_RowCommand(grid As GridView, e As GridViewCommandEventArgs)
         Dim index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim row As GridViewRow = grid.Rows(index)

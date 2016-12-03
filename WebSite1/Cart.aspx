@@ -112,7 +112,7 @@
                                 <asp:SessionParameter DefaultValue="-1" Name="userID" SessionField="id" />
                             </SelectParameters>
                         </asp:SqlDataSource>
-                        <a href="Purchase.aspx" class="btn btn-primary" runat="server" id="btnCheckout">Checkout</a>
+                        <a href="#" class="btn btn-primary" runat="server" ID="btnCheckout" onserverclick="Checkout">Checkout</a>
                     </div>
                 </div>
             </div>
