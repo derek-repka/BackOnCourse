@@ -16,9 +16,9 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-5">
-                <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldsWorkshop" AutoGenerateColumns="False" Width="750px">
+                <asp:GridView ID="gvWorkshops" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="True" AllowSorting="True" DataSourceID="sqldsWorkshop" AutoGenerateColumns="False" Width="750px">
                     <Columns>
-                        <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                        <asp:CommandField ShowEditButton="True" />
                         <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                         <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
                         <asp:BoundField DataField="Time &amp; Date" HeaderText="Time &amp; Date" SortExpression="Time &amp; Date" />
@@ -30,7 +30,7 @@
                     </Columns>
                 <PagerSettings Position="Top" />
             </asp:GridView>
-            <asp:SqlDataSource ID="sqldsWorkshop" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO [platformWorkshop] ([city], [location], [dateTime], [topicID], [firmID], [price], [quantity], [instructorID]) VALUES (@city, @location, @dateTime, @topicID, @firmID, @price, @quantity, @instructorID)" SelectCommand="SELECT city AS City, location AS Location, dateTime AS [Time &amp; Date], topicID AS TopicID, firmID AS FirmID, price AS Price, quantity AS Quantity, instructorID AS InstructorId FROM platformWorkshop" DeleteCommand="DELETE FROM [platformWorkshop] WHERE [workshopID] = @workshopID" UpdateCommand="UPDATE [platformWorkshop] SET [city] = @city, [location] = @location, [dateTime] = @dateTime, [topicID] = @topicID, [firmID] = @firmID, [price] = @price, [quantity] = @quantity, [instructorID] = @instructorID WHERE [workshopID] = @workshopID">
+            <asp:SqlDataSource ID="sqldsWorkshop" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" InsertCommand="INSERT INTO platformWorkshop(city, location, dateTime, topicID, firmID, price, quantity, instructorID) VALUES (@city, @location, @dateTime, @topicID, @firmID, @price, @quantity, @instructorID)" SelectCommand="SELECT city AS City, location AS Location, dateTime AS [Time &amp; Date], topicID AS TopicID, firmID AS FirmID, price AS Price, quantity AS Quantity, instructorID AS InstructorId FROM platformWorkshop" DeleteCommand="DELETE FROM [platformWorkshop] WHERE [workshopID] = @workshopID" UpdateCommand="UPDATE [platformWorkshop] SET [city] = @city, [location] = @location, [dateTime] = @dateTime, [topicID] = @topicID, [firmID] = @firmID, [price] = @price, [quantity] = @quantity, [instructorID] = @instructorID WHERE [workshopID] = @workshopID">
                 <DeleteParameters>
                     <asp:Parameter Name="workshopID" Type="Int32" />
                 </DeleteParameters>
@@ -65,55 +65,33 @@
                    </h4>
                  </div>
                  <div id="collapse1" class="panel-collapse collapse">
-                    <div class="panel-body"><div><div style="float:left;width:209px; height: 50px;"></div></div></div>
-                 </div>
+                    City: <asp:TextBox ID="City" runat="server"></asp:TextBox>
+                      <br />
+                    Location: <asp:TextBox ID="Location" runat="server"></asp:TextBox>
+                      <br />
+                    Date&amp;Time: <asp:TextBox ID="Date" runat="server"></asp:TextBox>
+                      <br />
+                    TopicID: <asp:TextBox ID="TopicID" runat="server"></asp:TextBox>
+                      <br />
+                    FirmID: <asp:TextBox ID="FirmID" runat="server"></asp:TextBox>
+                      <br />
+                    Price: <asp:TextBox ID="Price" runat="server"></asp:TextBox>
+                      <br />
+                    Quantity: <asp:TextBox ID="Quantity" runat="server"></asp:TextBox>
+                      <br />
+                    InstructorID: <asp:TextBox ID="InstructorID" runat="server"></asp:TextBox>
+                      <br />
+                    <asp:Button ID="CreateButton" runat="server" style="width: 63px" Text="Create" />
+                      <br />
+                    <asp:Label ID="Created" runat="server"></asp:Label>
                 </div>
                </div>
-                <div class ="form-group row"><div style="float:left;width:165px; height: 50px;">
-                    City:
-                <asp:TextBox ID="City" runat="server"></asp:TextBox>
-                </div>
-                    <div style="float:left;width:192px; height: 50px;">
-                        Location:
-                <asp:TextBox ID="Location" runat="server"></asp:TextBox>
-                    </div>
-                    <div style="float:left;width:205px; height: 50px;">
-                        Date&amp;Time<asp:TextBox ID="Date" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <br />
-&nbsp;<br />
-&nbsp;<br />
-                <div class ="form-group row"><div style="float:left;width:209px; height: 50px;">
-                        TopicID:
-                <asp:TextBox ID="TopicID" runat="server"></asp:TextBox>
-                    </div>
-                    <div style="float:left;width:209px; height: 50px;">
-                        FirmID:
-                <asp:TextBox ID="FirmID" runat="server"></asp:TextBox>
-                    </div>
-                    <div style="float:left;width:209px; height: 50px;">
-                        Price:
-                <asp:TextBox ID="Price" runat="server"></asp:TextBox>
-                    </div>
-                    </div>
-                <br />
-                <br />
-&nbsp;<br />
-                <div class ="form-group row"><div style="float:left;width:209px; height: 50px;">
-                        Quantity:
-                <asp:TextBox ID="Quantity" runat="server"></asp:TextBox>
-                    </div>
-                    <div style="float:left;width:209px; height: 50px;">
-                        InstructorID:
-                <asp:TextBox ID="InstructorID" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-
+              </div>
+               
                 <br />
 
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="sqldsInstructors" Height="50px" Width="125px" DataKeyNames="instructorID">
+            <asp:DetailsView ID="dvInstructor" runat="server" AutoGenerateRows="False" DataSourceID="sqldsInstructors" Height="50px" Width="125px" DataKeyNames="instructorID" AllowPaging="True">
                 <Fields>
                     <asp:BoundField DataField="instructorID" HeaderText="instructorID" SortExpression="instructorID" InsertVisible="False" ReadOnly="True" />
                     <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
@@ -122,6 +100,23 @@
                     <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
                 </Fields>
             </asp:DetailsView>
+                <br />
+&nbsp;<asp:DetailsView ID="dvFirm" runat="server" AutoGenerateRows="False" DataSourceID="sqldsFirm" Height="50px" Width="125px" DataKeyNames="firmID" AllowPaging="True">
+                <Fields>
+                    <asp:BoundField DataField="firmID" HeaderText="firmID" InsertVisible="False" ReadOnly="True" SortExpression="firmID" />
+                    <asp:BoundField DataField="firmName" HeaderText="firmName" SortExpression="firmName" />
+                    <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
+                </Fields>
+            </asp:DetailsView>
+                <br />
+&nbsp;<asp:DetailsView ID="dvTopic" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="topicID" DataSourceID="sqldsTopic" Height="50px" Width="125px">
+                    <Fields>
+                        <asp:BoundField DataField="topicID" HeaderText="topicID" InsertVisible="False" ReadOnly="True" SortExpression="topicID" />
+                        <asp:BoundField DataField="topicCode" HeaderText="topicCode" SortExpression="topicCode" />
+                        <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
+                    </Fields>
+            </asp:DetailsView>
+
             <asp:SqlDataSource ID="sqldsInstructors" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformInstructor] WHERE [instructorID] = @instructorID" InsertCommand="INSERT INTO platformInstructor(lastName, firstName) VALUES (@lastName, @firstName)" SelectCommand="SELECT platformInstructor.* FROM platformInstructor" UpdateCommand="UPDATE platformInstructor SET lastName = @lastName, firstName = @firstName, hireDate = @hireDate WHERE (instructorID = @instructorID)">
                 <DeleteParameters>
                     <asp:Parameter Name="instructorID" Type="Int32" />
@@ -137,6 +132,30 @@
                     <asp:Parameter Name="instructorID" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <asp:SqlDataSource ID="sqldsFirm" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformFirm] WHERE [firmID] = @firmID" InsertCommand="INSERT INTO [platformFirm] ([firmName]) VALUES (@firmName)" SelectCommand="SELECT * FROM [platformFirm]" UpdateCommand="UPDATE [platformFirm] SET [firmName] = @firmName WHERE [firmID] = @firmID">
+                <DeleteParameters>
+                    <asp:Parameter Name="firmID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="firmName" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="firmName" Type="String" />
+                    <asp:Parameter Name="firmID" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="sqldsTopic" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" DeleteCommand="DELETE FROM [platformTopic] WHERE [topicID] = @topicID" InsertCommand="INSERT INTO [platformTopic] ([topicCode]) VALUES (@topicCode)" SelectCommand="SELECT * FROM [platformTopic]" UpdateCommand="UPDATE [platformTopic] SET [topicCode] = @topicCode WHERE [topicID] = @topicID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="topicID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="topicCode" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="topicCode" Type="String" />
+                        <asp:Parameter Name="topicID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
             <br />
         </div>
       </div>
