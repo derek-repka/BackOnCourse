@@ -7,6 +7,8 @@
           <ul class="nav nav-sidebar">
             <li><a href="Dashboard.aspx">Dashboard <span class="sr-only">(current)</span></a></li>
             <li><a href="Courses.aspx">eCourses</a></li>
+            <li><a href="Products.aspx">Products</a></li>
+            <li><a href="Workshops.aspx">Workshops</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="Settings.aspx">Settings</a></li>

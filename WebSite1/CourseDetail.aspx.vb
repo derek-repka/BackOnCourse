@@ -55,5 +55,6 @@ Partial Class CourseDetail
         courseSqlDataSource.InsertParameters("quantity").DefaultValue = 1
 
         Dim count As Integer = courseSqlDataSource.Insert()
+
     End Sub
 End Class

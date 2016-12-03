@@ -49,7 +49,7 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="Default.aspx">Back on Course</a>
 
-                </div>
+                &nbsp;</div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="/CourseListing.aspx">Workshops</a></li>
@@ -57,7 +57,8 @@
                          <li><a runat="server" href="/ProductSearchPage.aspx?type=products">Products</a></li>
                     </ul>
                     <% If Session("id") Is Nothing Then%>
-                    <div class="navbar-form navbar-right"> 
+                    <div class="navbar-form navbar-right">
+                        <asp:Label ID="loginWarning" runat="server" visible="false" Text="Incorrect Credentials" ForeColor="#999999" Font-Bold="True"></asp:Label>
                         <div class="form-group">
                             <input id="txtEmail" runat="server" type="text" placeholder="Email" class="form-control">
                         </div>
