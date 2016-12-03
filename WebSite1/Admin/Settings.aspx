@@ -15,8 +15,57 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <asp:GridView ID="gvUsers" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="userID" DataSourceID="sqldsUsers">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:BoundField DataField="userID" HeaderText="userID" InsertVisible="False" ReadOnly="True" SortExpression="userID" />
+                    <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                    <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                    <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                    <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" />
+                </Columns>
+                <PagerSettings Position="TopAndBottom" />
+            </asp:GridView>
+            <asp:SqlDataSource ID="sqldsUsers" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT userID, email, firstName, lastName, type FROM platformUser" UpdateCommand="UPDATE platformUser SET password = @pass WHERE (userID = @userID)">
+                <UpdateParameters>
+                    <asp:Parameter Name="pass" />
+                    <asp:Parameter Name="userID" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <br />
+            <asp:Label ID="adminPass" runat="server" Text="Admin Password: "></asp:Label>
+            <asp:TextBox ID="adminPassText" runat="server"></asp:TextBox>
+            <br />
+            Enter a new password:
+            <asp:TextBox ID="newPass" runat="server"></asp:TextBox>
+            <br />
+            Confirm new password:
+            <asp:TextBox ID="newPassConfirm" runat="server"></asp:TextBox>
+            <br />
+            <asp:Button ID="passChange" runat="server" Text="Confirm password change" />
+            <br />
+            <asp:Label ID="wronglength" runat="server" Visible="False"></asp:Label>
+            <br />
+            <asp:Label ID="mismatch" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="adminPassWrong" runat="server"></asp:Label>
+            <br />
+            <br />
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+            </asp:DropDownList>
+            <br />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            <br />
+            <asp:Button ID="roleButton" runat="server" Text="Change Selected User Role" />
+            <asp:SqlDataSource ID="sqlAdminPass" runat="server" ConnectionString="<%$ ConnectionStrings:M418_group3ConnectionString %>" SelectCommand="SELECT password FROM platformUser WHERE (userID = @userID)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="userID" SessionField="id" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
       </div>
+
+
     </div>
 </asp:Content>
 
