@@ -58,7 +58,7 @@
             <asp:Label ID="PassChanged" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:DropDownList ID="ddlRoles" runat="server" AutoPostBack="True" DataSourceID="sqldsTypes" DataTextField="type" DataValueField="type">
+            <asp:DropDownList ID="ddlRoles" runat="server" DataSourceID="sqldsTypes" DataTextField="type" DataValueField="type">
             </asp:DropDownList>
             <br />
             <asp:Label ID="roleChanged" runat="server"></asp:Label>

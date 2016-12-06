@@ -38,7 +38,7 @@ Partial Class Admin_Settings
     End Sub
     Protected Sub roleButton_Click(sender As Object, e As EventArgs) Handles roleButton.Click
         sqldsRoles.UpdateParameters("type").DefaultValue = ddlRoles.SelectedValue
-        sqldsRoles.UpdateParameters("userID").DefaultValue = Session("ID")
+        sqldsRoles.UpdateParameters("userID").DefaultValue = Session("selected")
         sqldsRoles.Update()
         roleChanged.Text = "Role updated."
 
